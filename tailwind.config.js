@@ -15,6 +15,9 @@ export default {
         extend: {
             colors: {
                 'indigo': '#2F3466',
+                'indigo-mid': '#7f85c4',
+                'indigo-light': '#4e56a9',
+                'zinc': '#18181b',
                 primary: {
                     50: "#eef2ff",
                     100: "#e0e7ff",

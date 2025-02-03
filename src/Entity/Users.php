@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Security\Core\User\UserInterface;
 use App\Repository\UsersRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
-class Users
+class Users implements UserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -121,5 +122,28 @@ class Users
         $this->is_admin = $is_admin;
 
         return $this;
+    }
+
+    // Implémentation de getRoles() (nécessaire pour UserInterface)
+    public function getRoles(): array
+    {
+        // Assurez-vous de renvoyer un tableau de rôles
+        // Exemple : ['ROLE_USER', 'ROLE_ADMIN'] 
+        $roles = $this->is_admin ? ['ROLE_ADMIN'] : ['ROLE_USER'];
+        return $roles;
+    }
+
+    // Implémentation de getUserIdentifier() (nécessaire pour UserInterface)
+    public function getUserIdentifier(): string
+    {
+        // Ici, on retourne l'email ou le username comme identifiant unique
+        return $this->email;  // ou return $this->username;
+    }
+
+    // Implémentation de eraseCredentials() (nécessaire pour UserInterface)
+    public function eraseCredentials(): void
+    {
+        // Si vous avez des informations sensibles à effacer, vous pouvez le faire ici.
+        // Par exemple, un mot de passe temporaire.
     }
 }

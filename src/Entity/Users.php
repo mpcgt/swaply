@@ -2,12 +2,15 @@
 
 namespace App\Entity;
 
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface; // Correction ici
 use App\Repository\UsersRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
-class Users implements UserInterface
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+class Users implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -15,7 +18,7 @@ class Users implements UserInterface
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $id_users = null;
+    private int $id_users;
 
     #[ORM\Column(length: 50)]
     private ?string $first_name = null;
@@ -145,5 +148,11 @@ class Users implements UserInterface
     {
         // Si vous avez des informations sensibles à effacer, vous pouvez le faire ici.
         // Par exemple, un mot de passe temporaire.
+    }
+
+    // Implémentation de PasswordAuthenticatedUserInterface
+    public function getPassword(): string
+    {
+        return $this->getPasswordHash(); // Retourne le mot de passe haché
     }
 }

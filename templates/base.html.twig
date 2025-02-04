@@ -16,6 +16,7 @@
 		{% endblock %}
 	</head>
 	<body>
+    {% block body %}
 		<nav class="flex justify-center items-center mt-5">
 			<div class="w-full max-w-screen-xl flex justify-between items-center rounded-full bg-[#2F3466] text-white px-8 py-4 h-16">
 				<div class="flex items-center space-x-4">
@@ -42,5 +43,9 @@
 				</div>
 			</div>
 		</nav>
+		{% if app.debug %}
+    {{ include('@WebProfiler/Profiler/toolbar.html.twig') }}
+{% endif %}
 	</body>
+    {% endblock %}
 </html>

@@ -15,4 +15,11 @@ final class CategoryController extends AbstractController
             'controller_name' => 'CategoryController',
         ]);
     }
+    #[Route('/category/browser', name: 'app_category')]
+    public function browser(): Response
+    {
+        return $this->render('category/browser.html.twig', [
+            'controller_name' => 'CategoryController',
+        ]);
+    }
 }

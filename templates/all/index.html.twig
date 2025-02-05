@@ -1,20 +1,105 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Plateformes - Swaply
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<script src="https://cdn.tailwindcss.com"></script>
 
-{% block title %}Hello AllController!{% endblock %}
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	{% block body %}
+		{% include 'base.html.twig' %}
+        <div class="grid grid-cols-2 w-5/6 mx-auto">
+		<div class="grid grid-cols-1 w-1/2 mx-auto">
+			<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les catégories</h1>
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 rounded-t-xl flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/images/earth.png') }}" alt="Logo" class="bg-[#2F3466] rounded-full w-6 h-6">
+				<span>Navigateurs & Extensions</span>
+			</button>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/images/message.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Communication</span>
+			</button>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/maxpc/swaply/src/Controller/AllController.php</code></li>
-        <li>Your template at <code>C:/Users/maxpc/swaply/templates/all/index.html.twig</code></li>
-    </ul>
-</div>
-{% endblock %}
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/images/tv.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Divertissement</span>
+			</button>
+
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/images/folders.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Productivité</span>
+			</button>
+
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/images/thumbs-up.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Réseaux sociaux</span>
+			</button>
+
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/images/radio.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Services en ligne</span>
+			</button>
+
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/images/code.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Développement web</span>
+			</button>
+
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/images/smartphone.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Applications mobiles</span>
+			</button>
+
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 rounded-b-xl flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/images/games.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Jeux</span>
+			</button>
+		</div>
+		<div class="grid grid-cols-1 w-1/2 mx-auto">
+			<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Toutes les plateformes</h1>
+						<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 rounded-t-xl flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/icons-website/computer.png') }}" alt="Logo" class="w-6 h-6">
+				<span>PC</span>
+				<span class="text-zinc-300">Windows • Mac • Linux • ChromeOS • En ligne</span>
+			</button>
+
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/icons-website/mobile.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Mobile</span>
+				<span>Android • iOS</span>
+			</button>
+
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/icons-website/tv.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Télévision</span>
+				<span>Google TV • Apple TV • Fire TV</span>
+			</button>
+
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/icons-website/joystick.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Consoles</span>
+				<span>Steam • PlayStation • Nintendo • Xbox • Meta Quest • HTC Vive</span>
+			</button>
+
+			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+				<img src="{{ asset('assets/img/icons-website/watch.png') }}" alt="Logo" class="w-6 h-6">
+				<span>Montres</span>
+				<span>Android Wear • Apple Watch</span>
+			</button>
+		</div>
+        </div>
+		{% include 'footer.html.twig' %}
+
+	{% endblock %}
+</html>

@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>
-        {% block title %}Welcome!{% endblock %}
-    </title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<script src="https://cdn.tailwindcss.com"></script>
 
-    {% block javascripts %}
-        {% block importmap %}
-            {{ importmap('app') }}
-        {% endblock %}
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+    {% block body %}
+		<nav class="flex justify-center items-center mt-5">
+			<div class="w-full max-w-screen-xl flex justify-between items-center rounded-full bg-[#2F3466] text-white px-8 py-4 h-16">
+				<div class="flex items-center space-x-4">
+					<h1 class="text-4xl font-bold mb-1">Swaply</h1>
+				</div>
+				<div class="space-x-6">
+					<div class="max-w-sm">
+						<div class="flex items-center justify-center p-4 space-x-4">
+								<a href="/" type="button" class="text-white bg-[#65558F] hover:bg-[#4b3f6b] transition-all focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-4 py-2.5 text-center">
+									<div class="flex items-center justify-center space-x-2 whitespace-nowrap">
+										<img src="{{ asset('assets/img/icons-website/arrow-left.png') }}" alt="Logo" class="w-6">
+										<span>Accueil</span>
+									</div>
+								</a>
+								<a href="/account" type="button" class="text-white bg-[#65558F] hover:bg-[#4b3f6b] transition-all focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-8 py-2.5 text-center">
+									<div class="flex items-center justify-center space-x-2 whitespace-nowrap">
+										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-6">
+										<span>Mon compte</span>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		{% if app.debug %}
+    {{ include('@WebProfiler/Profiler/toolbar.html.twig') }}
+{% endif %}
+	</body>
     {% endblock %}
-</head>
-<body>
-    <nav class="flex justify-center items-center mt-5">
-        <div class="w-full max-w-screen-xl flex justify-between items-center rounded-full bg-[#2F3466] text-white px-8 py-4 h-16">
-            <div class="flex items-center space-x-4">
-                <h1 class="text-4xl league-spartan">Swaply</h1>
-            </div>
-            <div class="space-x-6">
-                <div class="max-w-sm">
-                    <div class="flex items-center justify-center p-4">
-                        <div class="flex w-full max-w-md">
-                            <div class="relative flex-grow mr-2">
-                                <label for="hs-search-box-with-loading-1" class="sr-only">Search</label>
-                                <input type="text" id="hs-search-box-with-loading-1" name="hs-search-box-with-loading-1" class="py-2.5 px-4 ps-11 block w-max bg-zinc-800 border-2 border-zinc-500 rounded-full text-sm focus:border-[#65558F] focus:ring-[#65558F] disabled:opacity-50 disabled:pointer-events-none" placeholder="Rechercher...">
-                                <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
-                                    <svg class="size-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="11" cy="11" r="8"/>
-                                        <path d="m21 21-4.3-4.3"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <button type="button" class="text-white bg-[#65558F] hover:bg-[#4b3f6b] transition-all focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center">
-                                <div class="flex items-center space-x-2 whitespace-nowrap">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round">
-                                        <path d="M18 20a6 6 0 0 0-12 0"/>
-                                        <circle cx="12" cy="10" r="4"/>
-                                        <circle cx="12" cy="12" r="10"/>
-                                    </svg>
-                                    <span>Mon compte</span>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-
-</body>
 </html>

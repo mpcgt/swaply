@@ -18,35 +18,8 @@
 	</head>
 
 	{% block body %}
-		<nav class="flex justify-center items-center mt-5">
-			<div class="w-full max-w-screen-xl flex justify-between items-center rounded-full bg-[#2F3466] text-white px-8 py-4 h-16">
-				<div class="flex items-center space-x-4">
-					<h1 class="text-4xl">Swaply</h1>
-				</div>
-				<div class="space-x-6">
-					<div class="max-w-sm">
-						<div class="flex items-center justify-center p-4">
-							<div class="flex w-full max-w-md">
-								<div class="relative flex-grow mr-2">
-									<label for="hs-search-box-with-loading-1" class="sr-only">Search</label>
-									<input type="text" id="hs-search-box-with-loading-1" name="hs-search-box-with-loading-1" class="py-2.5 px-4 ps-11 block w-max bg-zinc-800 border-2 border-zinc-500 rounded-full text-sm focus:border-[#65558F] focus:ring-[#65558F] disabled:opacity-50 disabled:pointer-events-none" placeholder="Rechercher...">
-									<div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
-										<img src="{{ asset('assets/img/icons-website/search.png') }}" alt="Logo" class="w-6">
-									</div>
-								</div>
-								<a href="/account" type="button" class="text-white bg-[#65558F] hover:bg-[#4b3f6b] transition-all focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-8 py-2.5 text-center">
-									<div class="flex items-center justify-center space-x-2 whitespace-nowrap">
-										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-6">
-										<span>Mon compte</span>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<div class="w-full max-w-screen-xl flex flex-col bg-zinc-700 shadow-sm rounded-full mt-10 mx-auto p-4 md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+		{% include 'base.html.twig' %}
+		<div class="w-full max-w-screen-xl flex flex-col bg-zinc-700 shadow-sm rounded-full mx-auto p-4 md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
 			<p class="text-2xl text-white mx-auto font-medium">
 				<span class="text-[#65558F] font-extrabold">100</span>
 				sites/applications alternatives dans Swaply
@@ -59,7 +32,7 @@
 				<div
 					id="json-example-with-tab-filter-in-dropdown-tab-preview-markup" class="max-w-sm mx-auto">
 					<!-- SearchBox -->
-					<div class="relative" data-hs-combo-box='{"groupingType": "tabs", "isOpenOnFocus": true, "apiUrl": "https://fakestoreapi.com/products", "apiGroupField": "category", "outputItemTemplate": "<div class=\"cursor-pointer p-2 space-y-0.5 w-full text-sm text-white hover:bg-black rounded-lg focus:outline-none focus:bg-zinc-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:focus:bg-neutral-700\" data-hs-combo-box-output-item><div class=\"flex justify-between items-center w-full\"><div data-hs-combo-box-output-item-field=\"title\" data-hs-combo-box-search-text data-hs-combo-box-value></div></div></div><span class=\"hidden hs-combo-box-selected:block\"><svg class=\"shrink-0 size-3.5 text-purple-600 dark:text-purple-500\" xmlns=\"http:.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"></polyline></svg></span></img></div>", "groupingTitleTemplate": "<button type=\"button\" class=\"capitalize py-1 px-2 inline-flex items-center gap-x-2 text-sm text-nowrap rounded-md border border-zinc-200 text-zinc-600 shadow-sm hover:bg-zinc-50 focus:outline-none focus:bg-zinc-100 hs-combo-box-tab-active:bg-[#65558F] hs-combo-box-tab-active:border-[#65558F] hs-combo-box-tab-active:focus:border-[#65558F] hs-combo-box-tab-active:text-white disabled:opacity-50 disabled:pointer-events-none dark:hs-combo-box-tab-active:bg-[#65558F] dark:hs-combo-box-tab-active:text-white dark:hs-combo-box-tab-active:border-[#65558F] dark:hs-combo-box-tab-active:focus:border-[#65558F] dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700\"></button>", "tabsWrapperTemplate": "<div class=\"overflow-x-auto p-4 rounded-t-xl border-b border-zinc-200 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-zinc-100 [&::-webkit-scrollbar-thumb]:bg-zinc-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:bg-neutral-800 dark:border-neutral-700\"></div>"}'>
+					<div class="relative" data-hs-combo-box='{"groupingType": "tabs", "isOpenOnFocus": true, "apiUrl": "https://fakestoreapi.com/products", "apiGroupField": "category", "outputItemTemplate": "<div class=\"cursor-pointer p-2 space-y-0.5 w-full text-sm text-white hover:bg-black rounded-3xl focus:outline-none focus:bg-zinc-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:focus:bg-neutral-700\" data-hs-combo-box-output-item><div class=\"flex justify-between items-center w-full\"><div data-hs-combo-box-output-item-field=\"title\" data-hs-combo-box-search-text data-hs-combo-box-value></div></div></div><span class=\"hidden hs-combo-box-selected:block\"><svg class=\"shrink-0 size-3.5 text-purple-600 dark:text-purple-500\" xmlns=\"http:.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"></polyline></svg></span></img></div>", "groupingTitleTemplate": "<button type=\"button\" class=\"capitalize py-1 px-2 inline-flex items-center gap-x-2 text-sm text-nowrap rounded-md border border-zinc-200 text-zinc-600 shadow-sm hover:bg-zinc-50 focus:outline-none focus:bg-zinc-100 hs-combo-box-tab-active:bg-[#65558F] hs-combo-box-tab-active:border-[#65558F] hs-combo-box-tab-active:focus:border-[#65558F] hs-combo-box-tab-active:text-white disabled:opacity-50 disabled:pointer-events-none dark:hs-combo-box-tab-active:bg-[#65558F] dark:hs-combo-box-tab-active:text-white dark:hs-combo-box-tab-active:border-[#65558F] dark:hs-combo-box-tab-active:focus:border-[#65558F] dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700\"></button>", "tabsWrapperTemplate": "<div class=\"overflow-x-auto p-4 rounded-t-xl border-b border-zinc-200 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-zinc-100 [&::-webkit-scrollbar-thumb]:bg-zinc-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:bg-neutral-800 dark:border-neutral-700\"></div>"}'>
 						<div class="relative">
 							<div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
 								<img src="{{ asset('assets/img/icons-website/search.png') }}" alt="Logo" class="w-6">
@@ -82,7 +55,7 @@
 		</div>
 
 		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Les catégories</h1>
-		<div class="grid grid-cols-3 gap-4">
+		<div class="grid grid-cols-3 gap-4 w-5/6 mx-auto">
 			<button class="bg-[#2F3466] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center">
 				<img src="{{ asset('assets/img/images/earth.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Navigateurs & Extensions</span>
@@ -131,9 +104,9 @@
 
 		<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
 
-		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Quitte les géants et choisis la liberté.</h1>
-		<div class="grid grid-cols-3 gap-4">
-			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center">
+		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Choix de Swaply</h1>
+		<div class="grid grid-cols-3 gap-4 w-5/6 mx-auto">
+			<button class="p-4 flex items-center mx-auto space-x-2 w-5/6 justify-center">
 				<div class="flex flex-col text-left">
 					<img src="{{ asset('assets/img/icons/saguenay.png') }}" alt="Logo" class="w-12">
 					<div class="text-2xl font-bold">Saguenay</div>
@@ -142,11 +115,11 @@
 						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Réseau social</span>
 					</div>
 					<div>Saguenay est un réseau social où vos données sont protégées, votre vie privée respectée et où l'absence de publicité assure une expérience utilisateur saine.</div>
-					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 						En savoir plus
 						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 					</a>
-					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 						Accéder dans le site
 						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 					</a>
@@ -162,11 +135,11 @@
 						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Moteur de recherche</span>
 					</div>
 					<div>Un moteur de recherche qui respecte la vie privée de ses utilisateurs en ne collectant pas de données personnelles.<div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -182,11 +155,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Navigateur web</span>
 							</div>
 							<div>Un navigateur web axé sur la confidentialité, qui bloque les publicités et les trackers tout en offrant des récompenses via le système de tokens BAT.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -202,11 +175,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Système d'exploitation</span>
 							</div>
 							<div>Un système d'exploitation open-source et sécurisé, utilisé par des millions de développeurs et d'utilisateurs à travers le monde.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -222,11 +195,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Gestionnaire de mot de passe</span>
 							</div>
 							<div>Un gestionnaire de mots de passe open-source qui permet de stocker et de générer des mots de passe de manière sécurisée.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -242,11 +215,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Messagerie</span>
 							</div>
 							<div>Une application de messagerie instantanée cryptée de bout en bout, axée sur la sécurité et la confidentialité des utilisateurs.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -262,11 +235,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Logiciel de productivité</span>
 							</div>
 							<div>Une suite bureautique collaborative permettant de créer, d'éditer et de partager des documents, feuilles de calcul et présentations en ligne.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -282,11 +255,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Messagerie</span>
 							</div>
 							<div>Un service de messagerie sécurisé qui offre un chiffrement de bout en bout et protège la confidentialité des utilisateurs.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -302,11 +275,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Bloquage des trackers</span>
 							</div>
 							<div>Un service de filtrage DNS qui protège les utilisateurs contre les sites malveillants et assure leur confidentialité en ligne.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -417,7 +390,7 @@
 				<section>
 					<div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
 						<div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-							<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-lg border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
+							<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-3xl border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
 								<img src="{{ asset('assets/img/icons/deepseek.png') }}" alt="Logo" class="p-2 mb-3 w-16 bg-white rounded-3xl mx-auto">
 								<h3 class="mb-4 text-2xl font-semibold">DeepSeek</h3>
 								<p class="mb-2 text-zinc-500 sm:text-lg dark:text-zinc-400">Alternatives à
@@ -427,7 +400,7 @@
 								</p>
 								<p class="text-white sm:text-lg">Eiusmod anim deserunt occaecat proident esse consequat sunt nisi.</p>
 							</div>
-							<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-lg border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
+							<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-3xl border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
 								<img src="{{ asset('assets/img/icons/edits.png') }}" alt="Logo" class="mb-3 w-16 rounded-3xl mx-auto">
 								<h3 class="mb-4 text-2xl font-semibold">Edits</h3>
 								<p class="mb-2 text-zinc-500 sm:text-lg dark:text-zinc-400">Alternatives à
@@ -437,7 +410,7 @@
 								</p>
 								<p class="text-white sm:text-lg">Eiusmod anim deserunt occaecat proident esse consequat sunt nisi.</p>
 							</div>
-							<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-lg border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
+							<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-3xl border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
 								<img src="{{ asset('assets/img/icons/whisk.png') }}" alt="Logo" class="mb-3 w-16 rounded-3xl mx-auto">
 								<h3 class="mb-4 text-2xl font-semibold">Google Whisk</h3>
 								<p class="mb-2 text-zinc-500 sm:text-lg dark:text-zinc-400">Alternatives à
@@ -454,7 +427,7 @@
 				<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
 
 				<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Les applications les plus utilisées au monde</h1>
-				<div class="grid grid-cols-3 gap-4">
+				<div class="grid grid-cols-3 gap-4 w-5/6 mx-auto">
 					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center">
 						<div class="flex flex-col text-left">
 							<img src="{{ asset('assets/img/icons/google.png') }}" alt="Logo" class="w-12">
@@ -464,11 +437,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Moteur de recherche</span>
 							</div>
 							<div>Un moteur de recherche internet populaire qui permet de trouver des informations, des images, des vidéos, et bien plus encore sur le web.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -484,11 +457,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Réseau social</span>
 							</div>
 							<div>Un réseau social permettant aux utilisateurs de se connecter, partager des photos, des vidéos, des messages et interagir avec des amis et des pages.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -504,11 +477,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Lecteur de musique</span>
 							</div>
 							<div>Une plateforme de streaming musical qui offre un accès à des millions de chansons, albums et playlists.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -524,11 +497,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Plateforme de streaming</span>
 							</div>
 							<div>Un service de streaming vidéo offrant une large sélection de films, séries, documentaires et contenus originaux.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -544,11 +517,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Intelligence artificielle</span>
 							</div>
 							<div>Un modèle d'intelligence artificielle développé par OpenAI, conçu pour comprendre et générer du texte de manière conversationnelle.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -564,11 +537,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Shopping</span>
 							</div>
 							<div>Un géant du commerce en ligne où les utilisateurs peuvent acheter une grande variété de produits, allant de l'électronique aux livres, en passant par la mode.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -584,11 +557,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Logiciel de productivité</span>
 							</div>
 							<div>Un assistant intelligent intégré dans les outils de Microsoft 365, conçu pour aider à automatiser des tâches et améliorer la productivité des utilisateurs.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -604,11 +577,11 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Design</span>
 							</div>
 							<div>Un logiciel de retouche d'image et de création graphique utilisé par les professionnels pour manipuler des photos et concevoir des visuels.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
@@ -624,16 +597,16 @@
 								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Navigateur web</span>
 							</div>
 							<div>Un navigateur web populaire développé par Google, offrant une navigation rapide, sécurisée et des fonctionnalités avancées.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								En savoir plus
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 								Accéder dans le site
 								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
 							</a>
 						</div>
 					</button>
 				</div>
-
+		{% include 'footer.html.twig' %}
 			{% endblock %}

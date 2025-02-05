@@ -1,10 +1,13 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}S'inscrire - Swaply
-{% endblock %}
+<head>
+    <title>{% block title %}S'inscrire - Swaply{% endblock %}</title>
+</head>
 
 {% block body %}
 {% include 'base.html.twig' %}
+
+	{{ form_errors(registrationForm) }}
+
+	{{ form_start(registrationForm, {'attr': {'class': 'w-full max-w-md mx-auto bg-zinc-900 p-8 mt-16 rounded-3xl shadow-md'}}) }}
 	{% if app.user %}
 		<div class="mb-3">
 			Vous êtes déjà connecté en tant que
@@ -12,25 +15,21 @@
 			<a href="{{ path('app_logout') }}">Se déconecter</a>
 		</div>
 	{% endif %}
-
-	{{ form_errors(registrationForm) }}
-
-	{{ form_start(registrationForm, {'attr': {'class': 'w-full max-w-md mx-auto bg-zinc-900 p-8 mt-16 rounded-lg shadow-md'}}) }}
 	<h1 class="text-center text-3xl font-bold mb-6 text-white">S'inscrire</h1>
 	<div class="mb-4">
 		{{ form_row(registrationForm.email, {
             'label': 'Adresse e-mail', 
-            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-500'}
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2F3466]'}
             }) }}
 		{{ form_row(registrationForm.plainPassword, {
             'label': 'Mot de passe',
-            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-500'}
+            'attr': {'class': 'w-full p-3 my-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2F3466]'}
         }) }}
 		{{ form_row(registrationForm.agreeTerms, {
                 'label': 'J\'accepte les conditions d\'utilisation et les règles de confidentalité',
                 'attr': {'class': 'text-white'}
             }) }}
-		<button type="submit" class="w-full py-3 bg-rose-600 text-white font-semibold rounded-lg hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500">
+		<button type="submit" class="w-full py-3 my-5 bg-[#2F3466] text-white font-semibold rounded-3xl hover:bg-[#2F3466] focus:outline-none focus:ring-2 focus:ring-[#2F3466]">
 			S'inscrire
 		</button>
 		{{ form_end(registrationForm) }}

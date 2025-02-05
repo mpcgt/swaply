@@ -27,7 +27,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $last_name = null;
 
     #[ORM\Column(length: 50)]
-    private ?string $username = null;
+    private string $username;
 
     #[ORM\Column(length: 255)]
     private ?string $email = null;
@@ -36,7 +36,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password_hash = null;
 
     #[ORM\Column]
-    private ?bool $is_admin = null;
+    private bool $is_admin;
 
     public function getId(): ?int
     {
@@ -120,7 +120,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->is_admin;
     }
 
-    public function setIsAdmin(bool $is_admin): static
+    public function setIsAdmin(bool $is_admin): self
     {
         $this->is_admin = $is_admin;
 

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Produits
+{% endblock %}
+
+{% block body %}
+	<h1>Liste des Produits</h1>
+	<div class="products-list">
+		{% for product in products %}
+			<div
+				class="product">
+				<!-- Affichage de l'icône -->
+				<div class="product-icon">
+					<img src="{{ product.icon }}" alt="Icône de {{ product.title }}">
+				</div>
+
+				<!-- Affichage du titre -->
+				<h2>{{ product.title }}</h2>
+				<h2>{{ product.idCategory }}</h2>
+				<h2>{{ product.idBadge }}</h2>
+
+				<!-- Affichage de la couverture -->
+				<div class="product-cover">
+					<img src="{{ product.cover }}" alt="Couverture de {{ product.title }}">
+				</div>
+
+				<!-- Affichage de la description -->
+				<p>{{ product.description }}</p>
+
+				<!-- Affichage du lien vers le site web -->
+				<div class="product-website">
+					<a href="{{ product.website }}" target="_blank">Voir le site</a>
+				</div>
+
+				<!-- Affichage du lien vers GitHub, s'il existe -->
+				{% if product.github %}
+					<div class="product-github">
+						<a href="{{ product.github }}" target="_blank">Voir sur GitHub</a>
+					</div>
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

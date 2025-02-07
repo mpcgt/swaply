@@ -18,7 +18,7 @@
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <a class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="/" aria-label="Preline">
-          <img src="{{ asset('assets/img/icons-website/logo-white.png') }}" alt="Swaply" class="w-28 h-auto" width="116" height="32">
+          <img src="{{ asset('assets/img/icons-website/logo-white.png') }}" alt="Swaply" class="w-28 h-auto hover:opacity-50 transition-all" width="116" height="32">
         </a>
       </div>
     </div>
@@ -26,14 +26,23 @@
     <div id="hs-navbar-floating-dark" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block" aria-labelledby="hs-navbar-floating-dark-collapse">
       <div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
         <a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300" href="/" aria-current="page">Accueil</a>
-        <a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300" href="#">Catégories</a>
+        <a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300" href="/category">Catégories</a>
         <a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300" href="/all">Plateformes</a>
         <a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300" href="#">À propos</a>
 
         <div>
+          {% if app.user %}
+          <a href="{{ path('app_account') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-[#5159A6] font-medium text-sm text-white rounded-full focus:outline-none">
+            Mon compte
+          </a>
+          <a href="{{ path('app_logout') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-[#5159A6] font-medium text-sm text-white rounded-full focus:outline-none">
+            Se déconnecter
+          </a>
+          {% else %}
           <a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-[#5159A6] font-medium text-sm text-white rounded-full focus:outline-none" href="/account">
             Mon compte
           </a>
+          {% endif %}
         </div>
       </div>
     </div>

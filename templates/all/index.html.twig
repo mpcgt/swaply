@@ -18,87 +18,98 @@
 
 	{% block body %}
 		{% include 'base.html.twig' %}
-        <div class="grid grid-cols-2 w-5/6 mx-auto">
-		<div class="grid grid-cols-1 w-1/2 mx-auto">
-			<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les catégories</h1>
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 rounded-t-xl flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/images/earth.png') }}" alt="Logo" class="bg-[#2F3466] rounded-full w-6 h-6">
-				<span>Navigateurs & Extensions</span>
-			</button>
+		<div class="grid grid-cols-2 w-5/6 mx-auto">
+			<div class="grid grid-cols-1 w-1/2 mx-auto">
+				<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les catégories</h1>
+				<a href="/category/browser" class="bg-[#18141C] hover:bg-[#252029] text-white p-4 rounded-t-xl border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/images/earth.png') }}" alt="Logo" class="bg-[#2F3466] rounded-full w-6 h-6">
+					<span>Navigateurs & Extensions</span>
+				</a>
 
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/images/message.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Communication</span>
-			</button>
+				<a href="/category/communication" class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/images/message.png') }}" alt="Logo" class="w-6 h-6">
+					<span>Communication</span>
+				</a>
 
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/images/tv.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Divertissement</span>
-			</button>
+				<a href="/category/entertainment" class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/images/tv.png') }}" alt="Logo" class="w-6 h-6">
+					<span>Divertissement</span>
+				</a>
 
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/images/folders.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Productivité</span>
-			</button>
+				<a href="/category/productivity" class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/images/folders.png') }}" alt="Logo" class="w-6 h-6">
+					<span>Productivité</span>
+				</a>
 
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/images/thumbs-up.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Réseaux sociaux</span>
-			</button>
+				<a href="/category/social-media" class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/images/thumbs-up.png') }}" alt="Logo" class="w-6 h-6">
+					<span>Réseaux sociaux</span>
+				</a>
 
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/images/radio.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Services en ligne</span>
-			</button>
+				<a href="/category/online-services" class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/images/radio.png') }}" alt="Logo" class="w-6 h-6">
+					<span>Services en ligne</span>
+				</a>
 
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/images/code.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Développement web</span>
-			</button>
+				<a href="/category/dev" class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/images/code.png') }}" alt="Logo" class="w-6 h-6">
+					<span>Développement web</span>
+				</a>
 
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/images/smartphone.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Applications mobiles</span>
-			</button>
+				<a href="/category/app" class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/images/smartphone.png') }}" alt="Logo" class="w-6 h-6">
+					<span>Applications mobiles</span>
+				</a>
 
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 rounded-b-xl flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/images/games.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Jeux</span>
-			</button>
+				<a href="/category/games" class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 rounded-b-xl flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/images/games.png') }}" alt="Logo" class="w-6 h-6">
+					<span>Jeux</span>
+				</a>
+			</div>
+			<div class="grid grid-cols-1 w-full mx-auto">
+				<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Toutes les plateformes</h1>
+				<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 rounded-t-xl border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/computer.png') }}" alt="Logo" class="w-6 flex-none h-6">
+					<div class="w-full flex-1">
+						<span>PC</span>
+						<span class="block text-zinc-300 mt-2">Windows • Mac • Linux • ChromeOS • En ligne</span>
+					</div>
+
+				</button>
+
+				<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/mobile.png') }}" alt="Logo" class="w-6 flex-none h-6">
+					<div class="w-full flex-1">
+						<span>Mobile</span>
+						<span class="block text-zinc-300 mt-2">Android • iOS</span>
+					</div>
+				</button>
+
+				<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/tv.png') }}" alt="Logo" class="w-6 flex-none h-6">
+					<div class="w-full flex-1">
+						<span>Télévision</span>
+						<span class="block text-zinc-300 mt-2">Google TV • Apple TV • Fire TV</span>
+					</div>
+				</button>
+
+				<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/joystick.png') }}" alt="Logo" class="w-6 flex-none h-6">
+					<div class="w-full flex-1">
+						<span>Consoles</span>
+						<span class="block text-zinc-300 mt-2">Steam • PlayStation • Nintendo • Xbox • Meta Quest • HTC Vive</span>
+					</div>
+				</button>
+
+				<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/watch.png') }}" alt="Logo" class="w-6 flex-none h-6">
+					<div class="w-full flex-1">
+						<span>Montres</span>
+						<span class="block text-zinc-300 mt-2">Android Wear • Apple Watch</span>
+					</div>
+				</button>
+			</div>
 		</div>
-		<div class="grid grid-cols-1 w-1/2 mx-auto">
-			<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Toutes les plateformes</h1>
-						<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 rounded-t-xl flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/icons-website/computer.png') }}" alt="Logo" class="w-6 h-6">
-				<span>PC</span>
-				<span class="text-zinc-300">Windows • Mac • Linux • ChromeOS • En ligne</span>
-			</button>
-
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/icons-website/mobile.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Mobile</span>
-				<span>Android • iOS</span>
-			</button>
-
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/icons-website/tv.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Télévision</span>
-				<span>Google TV • Apple TV • Fire TV</span>
-			</button>
-
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/icons-website/joystick.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Consoles</span>
-				<span>Steam • PlayStation • Nintendo • Xbox • Meta Quest • HTC Vive</span>
-			</button>
-
-			<button class="bg-[#18141C] hover:bg-[#252029] text-white p-4 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
-				<img src="{{ asset('assets/img/icons-website/watch.png') }}" alt="Logo" class="w-6 h-6">
-				<span>Montres</span>
-				<span>Android Wear • Apple Watch</span>
-			</button>
-		</div>
-        </div>
 		{% include 'footer.html.twig' %}
 
 	{% endblock %}

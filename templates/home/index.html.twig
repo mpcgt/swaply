@@ -31,8 +31,7 @@
 			<img src="{{ asset('assets/img/illustrations/rocket.png') }}" alt="Rocket" class="absolute right-[400px] top-[225px] mb-5 transform -translate-y-1/2" width="150" height="156">
 
 			<div class="rounded-xl shadow-sm p-6">
-				<div
-					id="json-example-with-tab-filter-in-dropdown-tab-preview-markup" class="max-w-sm mx-auto">
+				<div id="json-example-with-tab-filter-in-dropdown-tab-preview-markup" class="max-w-sm mx-auto">
 					<div class="relative" data-hs-combo-box='{"groupingType": "tabs", "isOpenOnFocus": true, "apiUrl": "https://fakestoreapi.com/products", "apiGroupField": "category", "outputItemTemplate": "<div class=\"cursor-pointer p-2 space-y-0.5 w-full text-sm text-white hover:bg-black rounded-3xl focus:outline-none focus:bg-zinc-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:focus:bg-neutral-700\" data-hs-combo-box-output-item><div class=\"flex justify-between items-center w-full\"><div data-hs-combo-box-output-item-field=\"title\" data-hs-combo-box-search-text data-hs-combo-box-value></div></div></div><span class=\"hidden hs-combo-box-selected:block\"><svg class=\"shrink-0 size-3.5 text-purple-600 dark:text-purple-500\" xmlns=\"http:.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"></polyline></svg></span></img></div>", "groupingTitleTemplate": "<button type=\"button\" class=\"capitalize py-1 px-2 inline-flex items-center gap-x-2 text-sm text-nowrap rounded-md border border-zinc-200 text-zinc-600 shadow-sm hover:bg-zinc-50 focus:outline-none focus:bg-zinc-100 hs-combo-box-tab-active:bg-[#65558F] hs-combo-box-tab-active:border-[#65558F] hs-combo-box-tab-active:focus:border-[#65558F] hs-combo-box-tab-active:text-white disabled:opacity-50 disabled:pointer-events-none dark:hs-combo-box-tab-active:bg-[#65558F] dark:hs-combo-box-tab-active:text-white dark:hs-combo-box-tab-active:border-[#65558F] dark:hs-combo-box-tab-active:focus:border-[#65558F] dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700\"></button>", "tabsWrapperTemplate": "<div class=\"overflow-x-auto p-4 rounded-t-xl border-b border-zinc-200 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-zinc-100 [&::-webkit-scrollbar-thumb]:bg-zinc-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:bg-neutral-800 dark:border-neutral-700\"></div>"}'>
 						<div class="relative">
 							<div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
@@ -59,60 +58,242 @@
 				<span>Navigateurs & Extensions</span>
 			</a>
 
-			<button class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/communication" class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/message.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Communication</span>
-			</button>
+			</a>
 
-			<button class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/entertainment" class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/tv.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Divertissement</span>
-			</button>
+			</a>
 
-			<button class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/productivity" class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/folders.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Productivité</span>
-			</button>
+			</a>
 
-			<button class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/social-media" class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/thumbs-up.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Réseaux sociaux</span>
-			</button>
+			</a>
 
-			<button class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/online-services" class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/radio.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Services en ligne</span>
-			</button>
+			</a>
 
-			<button class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/dev" class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/code.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Développement web</span>
-			</button>
+			</a>
 
-			<button class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/app" class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/smartphone.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Applications mobiles</span>
-			</button>
+			</a>
 
-			<button class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/games" class="bg-[#2F3466] hover:bg-[#5159A6] text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/games.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Jeux</span>
-			</button>
+			</a>
 		</div>
 
 		<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
 
-		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Choix de Swaply</h1>
-		<div class="grid grid-cols-3 gap-4 w-5/6 mx-auto">
-			<button class="p-4 flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-				<div class="flex flex-col text-left">
-					<img src="{{ asset('assets/img/icons/saguenay.png') }}" alt="Logo" class="w-12">
-					<div class="text-2xl font-bold">Saguenay</div>
-					<div class="flex items-center mt-3 mb-5 space-x-2">
-						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Réseau social</span>
+		<h1 class="text-4xl text-white font-bold text-center font-medium mt-5 mb-5">
+			Choix de
+			<span class="inline-block mt-2">
+				<img src="{{ asset('assets/img/icons-website/logo-white.png') }}" alt="Swaply" class="w-28 h-auto" width="116" height="32">
+			</span>
+		</h1>
+
+		<div class="flex justify-center">
+			<div class="grid grid-cols-3 gap-4 w-5/6 mx-auto">
+
+				{% for product in products %}
+					<div class="flex justify-between">
+						<button class="p-4 flex items-center mx-auto space-x-2 w-full justify-center cursor-auto">
+							<div class="flex flex-col text-left">
+								<img src="{{ product.icon }}" alt="{{ product.title }}" class="w-12">
+								<div class="text-2xl font-bold">{{ product.title }}</div>
+								<div class="flex items-center mt-3 mb-5 space-x-2">
+									<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">
+										{{ product.badge.code }}
+										•
+										{{ product.badge.price }}
+									</span>
+									<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">
+										{{ product.category.title }}
+									</span>
+								</div>
+								<div>{{ product.description }}</div>
+								<a href="{{ product.github }}" target="_blank" class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none">
+									En savoir plus
+									<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+								</a>
+								<a href="{{ product.website }}" target="_blank" class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none">
+									Accéder dans le site
+									<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+								</a>
+							</div>
+						</button>
 					</div>
-					<div>Saguenay est un réseau social où vos données sont protégées, votre vie privée respectée et où l'absence de publicité assure une expérience utilisateur saine.</div>
+				{% endfor %}
+			</div>
+		</div>
+
+
+		<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
+
+		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Les tendances actuellement</h1>
+
+		<section class="bg-zinc-900 rounded-3xl w-3/4 mb-10 justify-center mx-auto">
+			<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+				<div class="mt-4 md:mt-0">
+
+					<img src="{{ asset(path: 'assets/img/icons/signal.png') }}" alt="Logo" class="w-16">
+					<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">Signal</h2>
+					<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
+					<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">Communication</span>
+					<p class="mb-6 text-white md:text-lg">Une application de messagerie instantanée cryptée de bout en bout, axée sur la sécurité et la confidentialité des utilisateurs.</p>
+				</div>
+				<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/signal.png') }}" alt="Signal Cover">
+			</div>
+			<div class="flex justify-center space-x-4">
+				<button type="button" class="mb-9 text-white bg-[#7D5260] hover:bg-[#996777] font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
+					Alternatives
+				</button>
+
+				<button type="button" class="mb-9 text-white bg-[#65558F] hover:bg-[#7968A3] font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
+					En savoir plus
+				</button>
+
+				<button type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-zinc-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:focus:ring-zinc-700 dark:border-zinc-700 flex items-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
+					GitHub
+				</button>
+
+			</div>
+		</section>
+
+		<section class="bg-zinc-900 rounded-3xl w-3/4 mb-10 justify-center mx-auto">
+			<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+				<div class="mt-4 md:mt-0">
+
+					<img src="{{ asset(path: 'assets/img/icons/saguenay.png') }}" alt="Logo" class="w-16">
+					<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">Saguenay</h2>
+					<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
+					<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">Réseau social</span>
+					<p class="mb-6 text-white md:text-lg">Saguenay est un réseau social où vos données sont protégées, votre vie privée respectée et où l'absence de publicité assure une expérience utilisateur saine.</p>
+				</div>
+				<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/saguenay.png') }}" alt="Saguenay Cover">
+			</div>
+			<div class="flex justify-center space-x-4">
+				<button type="button" class="mb-9 text-white bg-[#7D5260] hover:bg-[#996777] font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
+					Alternatives
+				</button>
+
+				<button type="button" class="mb-9 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 flex items-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
+					En savoir plus
+				</button>
+
+				<button type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-zinc-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:focus:ring-zinc-700 dark:border-zinc-700 flex items-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
+					GitHub
+				</button>
+
+			</div>
+		</section>
+
+		<section class="bg-zinc-900 rounded-3xl w-3/4 mb-10 justify-center mx-auto">
+			<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+				<div class="mt-4 md:mt-0">
+
+					<img src="{{ asset(path: 'assets/img/icons/brave.png') }}" alt="Logo" class="w-16">
+					<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">Brave</h2>
+					<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
+					<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">Navigateur Web</span>
+					<p class="mb-6 text-white md:text-lg">Un navigateur web axé sur la confidentialité, qui bloque les publicités et les trackers tout en offrant des récompenses via le système de tokens BAT.</p>
+				</div>
+				<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/brave.png') }}" alt="Brave Cover">
+			</div>
+			<div class="flex justify-center space-x-4">
+				<button type="button" class="mb-9 text-white bg-[#7D5260] hover:bg-[#996777] font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
+					Alternatives
+				</button>
+
+				<button type="button" class="mb-9 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 flex items-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
+					En savoir plus
+				</button>
+
+				<button type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-zinc-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:focus:ring-zinc-700 dark:border-zinc-700 flex items-center transition-all">
+					<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
+					GitHub
+				</button>
+
+			</div>
+		</section>
+
+		<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
+
+		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Les nouveaux applications</h1>
+		<section>
+			<div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+				<div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+					<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-3xl border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
+						<img src="{{ asset('assets/img/icons/deepseek.png') }}" alt="Logo" class="p-2 mb-3 w-16 bg-white rounded-3xl mx-auto">
+						<h3 class="mb-4 text-2xl font-semibold">DeepSeek</h3>
+						<p class="mb-2 text-zinc-500 sm:text-lg dark:text-zinc-400">Alternatives à
+							<span class="text-white font-bold">ChatGPT</span>
+							et
+							<span class="text-white font-bold">Gemini</span>
+						</p>
+						<p class="text-white sm:text-lg">Eiusmod anim deserunt occaecat proident esse consequat sunt nisi.</p>
+					</div>
+					<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-3xl border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
+						<img src="{{ asset('assets/img/icons/edits.png') }}" alt="Logo" class="mb-3 w-16 rounded-3xl mx-auto">
+						<h3 class="mb-4 text-2xl font-semibold">Edits</h3>
+						<p class="mb-2 text-zinc-500 sm:text-lg dark:text-zinc-400">Alternatives à
+							<span class="text-white font-bold">CapCut</span>
+							et
+							<span class="text-white font-bold">Shotcut</span>
+						</p>
+						<p class="text-white sm:text-lg">Eiusmod anim deserunt occaecat proident esse consequat sunt nisi.</p>
+					</div>
+					<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-3xl border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
+						<img src="{{ asset('assets/img/icons/whisk.png') }}" alt="Logo" class="mb-3 w-16 rounded-3xl mx-auto">
+						<h3 class="mb-4 text-2xl font-semibold">Google Whisk</h3>
+						<p class="mb-2 text-zinc-500 sm:text-lg dark:text-zinc-400">Alternatives à
+							<span class="text-white font-bold">DALL·E</span>
+							et
+							<span class="text-white font-bold">MidJourney</span>
+						</p>
+						<p class="text-white sm:text-lg">Eiusmod anim deserunt occaecat proident esse consequat sunt nisi.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
+
+		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Les applications les plus utilisées au monde</h1>
+		<div class="grid grid-cols-3 gap-4 w-5/6 mx-auto">
+			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
+				<div class="flex flex-col text-left">
+					<img src="{{ asset('assets/img/icons/google.png') }}" alt="Logo" class="w-12">
+					<div class="text-2xl font-bold">Google</div>
+					<div class="flex items-center mt-3 mb-5 space-x-2">
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Gratuit</span>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Moteur de recherche</span>
+					</div>
+					<div>Un moteur de recherche internet populaire qui permet de trouver des informations, des images, des vidéos, et bien plus encore sur le web.</div>
 					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
 						En savoir plus
 						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
@@ -126,485 +307,164 @@
 
 			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
 				<div class="flex flex-col text-left">
-					<img src="{{ asset('assets/img/icons/duckduckgo.png') }}" alt="Logo" class="w-12">
-					<div class="text-2xl font-bold">DuckDuckGo</div>
+					<img src="{{ asset('assets/img/icons/facebook.png') }}" alt="Logo" class="w-12">
+					<div class="text-2xl font-bold">Facebook</div>
+					<div class="flex items-center mt-3 mb-5 space-x-2">
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Freemium</span>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Réseau social</span>
+					</div>
+					<div>Un réseau social permettant aux utilisateurs de se connecter, partager des photos, des vidéos, des messages et interagir avec des amis et des pages.</div>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						En savoir plus
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						Accéder dans le site
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+				</div>
+			</button>
+
+			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
+				<div class="flex flex-col text-left">
+					<img src="{{ asset('assets/img/icons/spotify.png') }}" alt="Logo" class="w-12">
+					<div class="text-2xl font-bold">Spotify</div>
+					<div class="flex items-center mt-3 mb-5 space-x-2">
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Freemium</span>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Lecteur de musique</span>
+					</div>
+					<div>Une plateforme de streaming musical qui offre un accès à des millions de chansons, albums et playlists.</div>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						En savoir plus
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						Accéder dans le site
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+				</div>
+			</button>
+
+			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
+				<div class="flex flex-col text-left">
+					<img src="{{ asset('assets/img/icons/netflix.png') }}" alt="Logo" class="w-6">
+					<div class="text-2xl font-bold">Netflix</div>
+					<div class="flex items-center mt-3 mb-5 space-x-2">
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Propriétaire • Payant</span>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Plateforme de streaming</span>
+					</div>
+					<div>Un service de streaming vidéo offrant une large sélection de films, séries, documentaires et contenus originaux.</div>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						En savoir plus
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						Accéder dans le site
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+				</div>
+			</button>
+
+			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
+				<div class="flex flex-col text-left">
+					<img src="{{ asset('assets/img/icons/chatgpt.png') }}" alt="Logo" class="w-12">
+					<div class="text-2xl font-bold">ChatGPT</div>
+					<div class="flex items-center mt-3 mb-5 space-x-2">
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Freemium</span>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Intelligence artificielle</span>
+					</div>
+					<div>Un modèle d'intelligence artificielle développé par OpenAI, conçu pour comprendre et générer du texte de manière conversationnelle.</div>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						En savoir plus
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						Accéder dans le site
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+				</div>
+			</button>
+
+			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
+				<div class="flex flex-col text-left">
+					<img src="{{ asset(path: 'assets/img/icons/amazon.png') }}" alt="Logo" class="w-12">
+					<div class="text-2xl font-bold">Amazon</div>
 					<div class="flex items-center mt-3 mb-5 space-x-2">
 						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Gratuit</span>
-						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Moteur de recherche</span>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Shopping</span>
 					</div>
-					<div>Un moteur de recherche qui respecte la vie privée de ses utilisateurs en ne collectant pas de données personnelles.<div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6 hover:right-16">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset('assets/img/icons/brave.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Brave</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Navigateur web</span>
-							</div>
-							<div>Un navigateur web axé sur la confidentialité, qui bloque les publicités et les trackers tout en offrant des récompenses via le système de tokens BAT.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset('assets/img/icons/linux.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Linux</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Système d'exploitation</span>
-							</div>
-							<div>Un système d'exploitation open-source et sécurisé, utilisé par des millions de développeurs et d'utilisateurs à travers le monde.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset('assets/img/icons/bitwarden.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Bitwarden</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Freemium</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Gestionnaire de mot de passe</span>
-							</div>
-							<div>Un gestionnaire de mots de passe open-source qui permet de stocker et de générer des mots de passe de manière sécurisée.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset(path: 'assets/img/icons/signal.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Signal</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Messagerie</span>
-							</div>
-							<div>Une application de messagerie instantanée cryptée de bout en bout, axée sur la sécurité et la confidentialité des utilisateurs.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset(path: 'assets/img/icons/onlyoffice.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">OnlyOffice</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Logiciel de productivité</span>
-							</div>
-							<div>Une suite bureautique collaborative permettant de créer, d'éditer et de partager des documents, feuilles de calcul et présentations en ligne.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset(path: 'assets/img/icons/protonmail.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Proton Mail</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Messagerie</span>
-							</div>
-							<div>Un service de messagerie sécurisé qui offre un chiffrement de bout en bout et protège la confidentialité des utilisateurs.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset(path: 'assets/img/icons/nextdns.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">NextDNS</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Bloquage des trackers</span>
-							</div>
-							<div>Un service de filtrage DNS qui protège les utilisateurs contre les sites malveillants et assure leur confidentialité en ligne.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
+					<div>Un géant du commerce en ligne où les utilisateurs peuvent acheter une grande variété de produits, allant de l'électronique aux livres, en passant par la mode.</div>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						En savoir plus
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						Accéder dans le site
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
 				</div>
+			</button>
 
-				<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
-
-				<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Les tendances actuellement</h1>
-
-				<section class="bg-zinc-900 rounded-3xl w-3/4 mb-10 justify-center mx-auto">
-					<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-						<div class="mt-4 md:mt-0">
-
-							<img src="{{ asset(path: 'assets/img/icons/signal.png') }}" alt="Logo" class="w-16">
-							<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">Signal</h2>
-							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">Communication</span>
-							<p class="mb-6 text-white md:text-lg">Une application de messagerie instantanée cryptée de bout en bout, axée sur la sécurité et la confidentialité des utilisateurs.</p>
-						</div>
-						<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/signal.png') }}" alt="Signal Cover">
+			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
+				<div class="flex flex-col text-left">
+					<img src="{{ asset(path: 'assets/img/icons/copilot.png') }}" alt="Logo" class="w-12">
+					<div class="text-2xl font-bold">Microsoft Copilot 365</div>
+					<div class="flex items-center mt-3 mb-5 space-x-2">
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Freemium</span>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Logiciel de productivité</span>
 					</div>
-					<div class="flex justify-center space-x-4">
-						<button type="button" class="mb-9 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
-							Alternatives
-						</button>
-
-						<button type="button" class="mb-9 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
-							En savoir plus
-						</button>
-
-						<button type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-zinc-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:focus:ring-zinc-700 dark:border-zinc-700 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
-							GitHub
-						</button>
-
-					</div>
-				</section>
-
-				<section class="bg-zinc-900 rounded-3xl w-3/4 mb-10 justify-center mx-auto">
-					<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-						<div class="mt-4 md:mt-0">
-
-							<img src="{{ asset(path: 'assets/img/icons/saguenay.png') }}" alt="Logo" class="w-16">
-							<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">Saguenay</h2>
-							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">Réseau social</span>
-							<p class="mb-6 text-white md:text-lg">Saguenay est un réseau social où vos données sont protégées, votre vie privée respectée et où l'absence de publicité assure une expérience utilisateur saine.</p>
-						</div>
-						<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/saguenay.png') }}" alt="Saguenay Cover">
-					</div>
-					<div class="flex justify-center space-x-4">
-						<button type="button" class="mb-9 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
-							Alternatives
-						</button>
-
-						<button type="button" class="mb-9 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
-							En savoir plus
-						</button>
-
-						<button type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-zinc-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:focus:ring-zinc-700 dark:border-zinc-700 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
-							GitHub
-						</button>
-
-					</div>
-				</section>
-
-				<section class="bg-zinc-900 rounded-3xl w-3/4 mb-10 justify-center mx-auto">
-					<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-						<div class="mt-4 md:mt-0">
-
-							<img src="{{ asset(path: 'assets/img/icons/brave.png') }}" alt="Logo" class="w-16">
-							<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">Brave</h2>
-							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">Navigateur Web</span>
-							<p class="mb-6 text-white md:text-lg">Un navigateur web axé sur la confidentialité, qui bloque les publicités et les trackers tout en offrant des récompenses via le système de tokens BAT.</p>
-						</div>
-						<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/brave.png') }}" alt="Brave Cover">
-					</div>
-					<div class="flex justify-center space-x-4">
-						<button type="button" class="mb-9 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
-							Alternatives
-						</button>
-
-						<button type="button" class="mb-9 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
-							En savoir plus
-						</button>
-
-						<button type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-zinc-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:focus:ring-zinc-700 dark:border-zinc-700 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
-							GitHub
-						</button>
-
-					</div>
-				</section>
-
-				<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
-
-				<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Les nouveaux applications</h1>
-				<section>
-					<div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-						<div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-							<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-3xl border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
-								<img src="{{ asset('assets/img/icons/deepseek.png') }}" alt="Logo" class="p-2 mb-3 w-16 bg-white rounded-3xl mx-auto">
-								<h3 class="mb-4 text-2xl font-semibold">DeepSeek</h3>
-								<p class="mb-2 text-zinc-500 sm:text-lg dark:text-zinc-400">Alternatives à
-									<span class="text-white font-bold">ChatGPT</span>
-									et
-									<span class="text-white font-bold">Gemini</span>
-								</p>
-								<p class="text-white sm:text-lg">Eiusmod anim deserunt occaecat proident esse consequat sunt nisi.</p>
-							</div>
-							<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-3xl border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
-								<img src="{{ asset('assets/img/icons/edits.png') }}" alt="Logo" class="mb-3 w-16 rounded-3xl mx-auto">
-								<h3 class="mb-4 text-2xl font-semibold">Edits</h3>
-								<p class="mb-2 text-zinc-500 sm:text-lg dark:text-zinc-400">Alternatives à
-									<span class="text-white font-bold">CapCut</span>
-									et
-									<span class="text-white font-bold">Shotcut</span>
-								</p>
-								<p class="text-white sm:text-lg">Eiusmod anim deserunt occaecat proident esse consequat sunt nisi.</p>
-							</div>
-							<div class="flex flex-col p-6 mx-auto max-w-lg text-center text-zinc-900 bg-white rounded-3xl border border-zinc-100 shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
-								<img src="{{ asset('assets/img/icons/whisk.png') }}" alt="Logo" class="mb-3 w-16 rounded-3xl mx-auto">
-								<h3 class="mb-4 text-2xl font-semibold">Google Whisk</h3>
-								<p class="mb-2 text-zinc-500 sm:text-lg dark:text-zinc-400">Alternatives à
-									<span class="text-white font-bold">DALL·E</span>
-									et
-									<span class="text-white font-bold">MidJourney</span>
-								</p>
-								<p class="text-white sm:text-lg">Eiusmod anim deserunt occaecat proident esse consequat sunt nisi.</p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
-
-				<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Les applications les plus utilisées au monde</h1>
-				<div class="grid grid-cols-3 gap-4 w-5/6 mx-auto">
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset('assets/img/icons/google.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Google</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Gratuit</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Moteur de recherche</span>
-							</div>
-							<div>Un moteur de recherche internet populaire qui permet de trouver des informations, des images, des vidéos, et bien plus encore sur le web.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset('assets/img/icons/facebook.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Facebook</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Freemium</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Réseau social</span>
-							</div>
-							<div>Un réseau social permettant aux utilisateurs de se connecter, partager des photos, des vidéos, des messages et interagir avec des amis et des pages.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset('assets/img/icons/spotify.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Spotify</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Freemium</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Lecteur de musique</span>
-							</div>
-							<div>Une plateforme de streaming musical qui offre un accès à des millions de chansons, albums et playlists.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset('assets/img/icons/netflix.png') }}" alt="Logo" class="w-6">
-							<div class="text-2xl font-bold">Netflix</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Propriétaire • Payant</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Plateforme de streaming</span>
-							</div>
-							<div>Un service de streaming vidéo offrant une large sélection de films, séries, documentaires et contenus originaux.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset('assets/img/icons/chatgpt.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">ChatGPT</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Freemium</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Intelligence artificielle</span>
-							</div>
-							<div>Un modèle d'intelligence artificielle développé par OpenAI, conçu pour comprendre et générer du texte de manière conversationnelle.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset(path: 'assets/img/icons/amazon.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Amazon</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Gratuit</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Shopping</span>
-							</div>
-							<div>Un géant du commerce en ligne où les utilisateurs peuvent acheter une grande variété de produits, allant de l'électronique aux livres, en passant par la mode.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset(path: 'assets/img/icons/copilot.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Microsoft Copilot 365</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-500 text-white">Propriétaire • Freemium</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Logiciel de productivité</span>
-							</div>
-							<div>Un assistant intelligent intégré dans les outils de Microsoft 365, conçu pour aider à automatiser des tâches et améliorer la productivité des utilisateurs.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset(path: 'assets/img/icons/photoshop.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Adobe Photoshop</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Propriétaire • Payant</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Design</span>
-							</div>
-							<div>Un logiciel de retouche d'image et de création graphique utilisé par les professionnels pour manipuler des photos et concevoir des visuels.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
-
-					<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
-						<div class="flex flex-col text-left">
-							<img src="{{ asset(path: 'assets/img/icons/chrome.png') }}" alt="Logo" class="w-12">
-							<div class="text-2xl font-bold">Google Chrome</div>
-							<div class="flex items-center mt-3 mb-5 space-x-2">
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
-								<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Navigateur web</span>
-							</div>
-							<div>Un navigateur web populaire développé par Google, offrant une navigation rapide, sécurisée et des fonctionnalités avancées.</div>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								En savoir plus
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-							<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
-								Accéder dans le site
-								<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
-							</a>
-						</div>
-					</button>
+					<div>Un assistant intelligent intégré dans les outils de Microsoft 365, conçu pour aider à automatiser des tâches et améliorer la productivité des utilisateurs.</div>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						En savoir plus
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						Accéder dans le site
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
 				</div>
-				{% include 'footer.html.twig' %}
-			{% endblock %}
+			</button>
+
+			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
+				<div class="flex flex-col text-left">
+					<img src="{{ asset(path: 'assets/img/icons/photoshop.png') }}" alt="Logo" class="w-12">
+					<div class="text-2xl font-bold">Adobe Photoshop</div>
+					<div class="flex items-center mt-3 mb-5 space-x-2">
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Propriétaire • Payant</span>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Design</span>
+					</div>
+					<div>Un logiciel de retouche d'image et de création graphique utilisé par les professionnels pour manipuler des photos et concevoir des visuels.</div>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						En savoir plus
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						Accéder dans le site
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+				</div>
+			</button>
+
+			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
+				<div class="flex flex-col text-left">
+					<img src="{{ asset(path: 'assets/img/icons/chrome.png') }}" alt="Logo" class="w-12">
+					<div class="text-2xl font-bold">Google Chrome</div>
+					<div class="flex items-center mt-3 mb-5 space-x-2">
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">Open Source • Gratuit</span>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-zinc-500 text-white">Navigateur web</span>
+					</div>
+					<div>Un navigateur web populaire développé par Google, offrant une navigation rapide, sécurisée et des fonctionnalités avancées.</div>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						En savoir plus
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+					<a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-3xl text-indigo-mid decoration-2 hover:text-indigo-light focus:outline-none focus:text-indigo-mid transition-all disabled:opacity-50 disabled:pointer-events-none" href="#">
+						Accéder dans le site
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+					</a>
+				</div>
+			</button>
+		</div>
+		{% include 'footer.html.twig' %}
+	{% endblock %}
+</html>

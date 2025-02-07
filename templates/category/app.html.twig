@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Swaply
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<link rel="stylesheet" href="./assets/styles/app.css">
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+
+	{% block body %}
+		{% include 'base.html.twig' %}
+		<img src="{{ asset('assets/img/cover/category/app.png') }}" alt="Logo" class="w-2/3 h-64 object-cover rounded-3xl mx-auto">
+
+		<div class="flex" aria-label="Breadcrumb">
+			<ol class="inline-flex items-center space-x-1 md:space-x-2 mx-auto mt-5">
+				<li class="inline-flex items-center">
+					<a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+						<img src="{{ asset('assets/img/icons-website/home.png') }}" alt="Logo" class="w-5">
+						&nbsp;&nbsp;&nbsp;Accueil
+					</a>
+				</li>
+				<li>
+					<div class="flex items-center">
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+						<a href="/category" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Catégories</a>
+					</div>
+				</li>
+				<li aria-current="page">
+					<div class="flex items-center">
+						<img src="{{ asset('assets/img/icons-website/chevron-right.png') }}" alt="Logo" class="w-6">
+						<span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Navigateurs & Extensions</span>
+					</div>
+				</li>
+			</ol>
+		</div>
+
+		<div class="flex mx-auto text-center w-1/2 mt-5">Si vous cherchez des alternatives aux navigateurs ou aux extensions classiques, vous êtes au bon endroit. Découvrez des options sécurisées, performantes et adaptées à vos besoins pour une meilleure expérience de navigation.</div>
+
+		<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
+
+		{% for product in products %}
+			<section class="rounded-3xl w-3/4 mb-10 justify-center mx-auto">
+				<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+					<div class="mt-4 md:mt-0">
+						<img src="{{ product.icon }}" alt="{{ product.title }}" class="w-16">
+						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">{{ product.title }}</h2>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">{{ product.badge.code }}
+							•
+							{{ product.badge.price }}</span>
+						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">{{ product.category.title }}</span>
+						<p class="mb-6 text-white md:text-lg">{{ product.description }}</p>
+					</div>
+					<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/saguenay.png') }}" alt="Saguenay Cover">
+				</div>
+				<div class="flex justify-center space-x-4">
+					<button type="button" class="mb-9 text-white bg-[#7D5260] hover:bg-[#996777] font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
+						<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
+						Alternatives
+					</button>
+
+										<a href="{{ product.website }}" target="_blank" type="button" class="mb-9 text-white bg-[#65558F] hover:bg-[#7968A3] font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
+
+						<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
+						En savoir plus
+					</a>
+
+					<a href="{{ product.github }}" target="_blank" type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-zinc-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:focus:ring-zinc-700 dark:border-zinc-700 flex items-center transition-all">
+						<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
+						GitHub
+					</a>
+				</div>
+			</section>
+			<hr class="h-px my-16 border-zinc-600 border-1 w-3/4 mx-auto">
+		{% endfor %}
+		{% include 'footer.html.twig' %}
+	{% endblock %}
+</html>

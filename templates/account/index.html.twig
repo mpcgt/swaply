@@ -6,16 +6,21 @@
 </head>
 
 {% block body %}
-	{% include 'base.html.twig' %}
 	{% if app.user %}
+		{% include 'base.html.twig' %}
 		<span class="flex items-center justify-center space-x-4">
+		{% if app.user.username %}
 			<h1 class="text-4xl font-bold">Bonjour
 				{{ app.user.username }}
 				!</h1>
+		{% endif %}
 		</span>
 
 		<section class="flex justify-center mt-16">
+
+		<img src="{{ asset('assets/img/illustrations/profile-picture-default.jpg') }}" alt="Profile picture default" class="w-1/4 h-128 object-cover rounded-3xl mr-16">
 			<div class="text-start max-w-screen-xl px-4">
+			{% if app.user.getFirstName() %}
 				<h2 class="mb-4 text-gray-400">
 					Votre prénom & nom
 				</h2>
@@ -25,33 +30,33 @@
 					Votre nom d'utilisateur
 				</h2>
 				<h1 class="mb-4 font-semibold text-white>">{{ app.user.username }}</h1>
+			{% endif %}
+			<h2 class="mb-4 text-gray-400">
+				Votre adresse mail
+			</h2>
+			<h1 class="mb-4 font-semibold text-white>">{{ app.user.email }}</h1>
+			{% if app.user.isAdmin %}
 				<h2 class="mb-4 text-gray-400">
-					Votre adresse mail
+					Certifié
 				</h2>
-				<h1 class="mb-4 font-semibold text-white>">{{ app.user.email }}</h1>
-				{% if app.user.isAdmin %}
-					<h2 class="mb-4 text-gray-400">
-						Certifié
-					</h2>
-					<img src="{{ asset('assets/img/icons-website/certified.png') }}" alt="Logo" class="w-9 mb-5">
-				{% else %}
-					Non certifié
-				{% endif %}
+				<img src="{{ asset('assets/img/icons-website/certified.png') }}" alt="Logo" class="w-9 mb-5">
+			{% endif %}
 
-				<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
 
-				<div class="flex justify-center space-x-2">
-					<a type="button" href="{{ path('app_logout') }}" class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
-						Se déconnecter
-					</a>
-					<a type="button" class="text-black bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900">
-						Modifier vos informations
-					</a>
-					<a type="button" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
-						Supprimer votre compte et vos données
-					</a>
-				</div>
+			<div class="flex justify-center space-x-2">
+				<a type="button" href="{{ path('app_logout') }}" class="text-white bg-purple-700 hover:bg-purple-800 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 transition-all">
+					Se déconnecter
+				</a>
+				<a type="button" href="#" class="text-black bg-yellow-400 hover:bg-yellow-500 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 transition-all">
+					Modifier vos informations
+				</a>
+				<a type="button" href="#" class="text-white bg-red-600 hover:bg-red-700 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 transition-all">
+					Supprimer votre compte et vos données
+				</a>
 			</div>
-		</section>
-	{% endif %}
-{% endblock %}
+		</div>
+	</section>
+	<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
+{% else %}
+	{% include './registration/register.html.twig' %}
+{% endif %}{% endblock %}

@@ -1,9 +1,12 @@
 <head>
-    <title>{% block title %}S'inscrire - Swaply{% endblock %}</title>
+	<title>
+		{% block title %}S'inscrire - Swaply
+		{% endblock %}
+	</title>
 </head>
 
 {% block body %}
-{% include 'base.html.twig' %}
+	{% include 'base.html.twig' %}
 
 	{{ form_errors(registrationForm) }}
 

@@ -24,12 +24,18 @@ class ProductsCrudController extends AbstractCrudController
 
         return [
             IdField::new('id'),
+            IdField::new('id_products'),
+            IdField::new('id_category'),
+            IdField::new('id_badge'),
             TextField::new('title'),
             TextEditorField::new('description'),
             TextEditorField::new('website'),
             TextEditorField::new('github'),
-            ImageField::new('icon'),
-            ImageField::new('cover'),
+            ImageField::new('icon')
+                ->setUploadDir('public/assets/uploads/icons'),
+            ImageField::new('cover')
+                ->setUploadDir('public/assets/uploads/covers')   
+                ->setRequired(false),
 
         ];
     }

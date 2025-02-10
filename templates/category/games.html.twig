@@ -52,7 +52,7 @@
 			<section class="rounded-3xl w-3/4 mb-10 justify-center mx-auto">
 				<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
 					<div class="mt-4 md:mt-0">
-						<img src="{{ product.icon }}" alt="{{ product.title }}" class="w-16">
+						<img src="{{ asset('assets/uploads/icons/' ~ product.icon) }}" alt="{{ product.title }}" class="w-16">
 						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">{{ product.title }}</h2>
 						<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">{{ product.badge.code }}
 							•

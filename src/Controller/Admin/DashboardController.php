@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Badge;
 use App\Entity\Category;
+use App\Entity\Lists;
 use App\Entity\Products;
 use App\Entity\Reviews;
 use App\Entity\Tags;
@@ -38,6 +39,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Products', 'fas fa-laptop', Products::class);
         yield MenuItem::linkToCrud('Users', 'fas fa-user', Users::class);
         yield MenuItem::linkToCrud('Category', 'fas fa-list', Category::class);
+        yield MenuItem::linkToCrud('Lists', 'fas fa-newspaper', Lists::class);
         yield MenuItem::linkToCrud('Badge', 'fas fa-tag', Badge::class);
         yield MenuItem::linkToCrud('Tags', 'fas fa-hashtag', Tags::class);
         yield MenuItem::linkToCrud('Reviews', 'fas fa-star', Reviews::class);

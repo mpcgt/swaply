@@ -12,7 +12,7 @@ class Products
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    public ?int $id = null;
 
     #[ORM\Column]
     private ?int $id_products = null;
@@ -42,7 +42,8 @@ class Products
     #[ORM\JoinColumn(name: "id_category", referencedColumnName: "id")]
     private ?Category $category = null;
 
-    // Modifier ici pour une relation ManyToOne
+    private ?int $id_badge = null;
+
     #[ORM\ManyToOne(targetEntity: Badge::class)]
     #[ORM\JoinColumn(name: "id_badge", referencedColumnName: "id")]
     private ?Badge $badge = null;
@@ -160,16 +161,26 @@ class Products
         return $this;
     }
 
-    // Ajouter ici le getter pour la relation avec Badge
+    public function getIdBadge(): ?int
+    {
+        return $this->id_badge;
+    }
+
+    public function setIdBadge(int $id_badge): static
+    {
+        $this->id_badge = $id_badge;
+
+        return $this;
+    }
+
     public function getBadge(): ?Badge
     {
         return $this->badge;
     }
-
+    
     public function setBadge(?Badge $badge): static
     {
         $this->badge = $badge;
-
         return $this;
     }
 }

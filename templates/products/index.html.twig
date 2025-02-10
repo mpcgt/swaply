@@ -1,44 +1,58 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Swaply
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<link rel="stylesheet" href="./assets/styles/app.css">
+		<script src="https://cdn.tailwindcss.com"></script>
 
-{% block title %}Liste des Produits
-{% endblock %}
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
 
-{% block body %}
-	<h1>Liste des Produits</h1>
-	<div class="products-list">
-		{% for product in products %}
-			<div
-				class="product">
-				<!-- Affichage de l'icône -->
-				<div class="product-icon">
-					<img src="{{ product.icon }}" alt="Icône de {{ product.title }}">
-				</div>
-
-				<!-- Affichage du titre -->
-				<h2>{{ product.title }}</h2>
-				<h2>{{ product.idCategory }}</h2>
-				<h2>{{ product.idBadge }}</h2>
-
-				<!-- Affichage de la couverture -->
-				<div class="product-cover">
-					<img src="{{ product.cover }}" alt="Couverture de {{ product.title }}">
-				</div>
-
-				<!-- Affichage de la description -->
-				<p>{{ product.description }}</p>
-
-				<!-- Affichage du lien vers le site web -->
-				<div class="product-website">
-					<a href="{{ product.website }}" target="_blank">Voir le site</a>
-				</div>
-
-				<!-- Affichage du lien vers GitHub, s'il existe -->
-				{% if product.github %}
-					<div class="product-github">
-						<a href="{{ product.github }}" target="_blank">Voir sur GitHub</a>
+	{% block body %}
+		{% include 'base.html.twig' %}
+		<div class="products-list">
+			{% for product in products %}
+				<section class="rounded-3xl w-3/4 mb-10 justify-center mx-auto">
+					<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+						<div class="mt-4 md:mt-0">
+							<img src="{{ asset('assets/uploads/icons/' ~ product.icon) }}" alt="{{ product.title }}" class="w-16">
+							<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">{{ product.title }}</h2>
+							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">{{ product.badge.code }}
+								•
+								{{ product.badge.price }}</span>
+							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">{{ product.category.title }}</span>
+							<p class="mb-6 text-white md:text-lg">{{ product.description }}</p>
+						</div>
+						<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/saguenay.png') }}" alt="Saguenay Cover">
 					</div>
-				{% endif %}
-			</div>
-		{% endfor %}
-	</div>
-{% endblock %}
+					<div class="flex justify-center space-x-4">
+						<button type="button" class="mb-9 text-white bg-[#7D5260] hover:bg-[#996777] font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
+							<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
+							Alternatives
+						</button>
+
+						<a href="{{ product.website }}" target="_blank" type="button" class="mb-9 text-white bg-[#65558F] hover:bg-[#7968A3] font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
+
+							<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
+							En savoir plus
+						</a>
+
+						<a href="{{ product.github }}" target="_blank" type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-zinc-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:focus:ring-zinc-700 dark:border-zinc-700 flex items-center transition-all">
+							<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
+							GitHub
+						</a>
+					</div>
+				</section>
+			{% endfor %}
+		</div>
+	{% endblock %}
+</html>

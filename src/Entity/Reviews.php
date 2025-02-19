@@ -2,6 +2,10 @@
 
 namespace App\Entity;
 
+use App\Entity\User;
+use App\Entity\Product;
+use App\Entity\Products;
+use App\Entity\Users;
 use App\Repository\ReviewsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -13,14 +17,13 @@ class Reviews
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $id_review = null;
+    #[ORM\ManyToOne(targetEntity: Users::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Users $user = null;
 
-    #[ORM\Column]
-    private ?int $id_user = null;
-
-    #[ORM\Column]
-    private ?int $id_product = null;
+    #[ORM\ManyToOne(targetEntity: Products::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Products $product = null;
 
     #[ORM\Column(length: 255)]
     private ?string $rating = null;
@@ -33,39 +36,25 @@ class Reviews
         return $this->id;
     }
 
-    public function getIdReview(): ?int
+    public function getUser(): ?Users
     {
-        return $this->id_review;
+        return $this->user;
     }
 
-    public function setIdReview(int $id_review): static
+    public function setUser(Users $user): static
     {
-        $this->id_review = $id_review;
-
+        $this->user = $user;
         return $this;
     }
 
-    public function getIdUser(): ?int
+    public function getProduct(): ?Products
     {
-        return $this->id_user;
+        return $this->product;
     }
 
-    public function setIdUser(int $id_user): static
+    public function setProduct(Products $product): static
     {
-        $this->id_user = $id_user;
-
-        return $this;
-    }
-
-    public function getIdProduct(): ?int
-    {
-        return $this->id_product;
-    }
-
-    public function setIdProduct(int $id_product): static
-    {
-        $this->id_product = $id_product;
-
+        $this->product = $product;
         return $this;
     }
 
@@ -77,7 +66,6 @@ class Reviews
     public function setRating(string $rating): static
     {
         $this->rating = $rating;
-
         return $this;
     }
 
@@ -89,7 +77,6 @@ class Reviews
     public function setReviewText(string $review_text): static
     {
         $this->review_text = $review_text;
-
         return $this;
     }
 }

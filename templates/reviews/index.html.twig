@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}Avis - Swaply
+			{% endblock %}
+		</title>
+	</head>
+
+	{% block body %}
+		{% include 'base.html.twig' %}
+		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les avis</h1>
+		<div class="flex justify-center">
+			<a href="{{ path('reviews_new') }}" class="py-2 px-3 bg-indigo-500 hover:bg-indigo-900 font-medium text-sm text-white rounded-full focus:outline-none transition-all">
+				Écrire un avis
+			</a>
+		</div>
+
+
+		<ul class="bg-zinc-900 rounded-3xl w-3/4 mt-10 mb-10 justify-center mx-auto p-10">
+			{% for review in reviews %}
+				<li>
+					<strong>{{ review.user.username }}</strong>
+					a publié son avis sur
+					<img src="{{ asset('assets/uploads/icons/' ~ review.product.icon) }}" alt="Logo" class="w-16"/>
+					<strong>{{ review.product.title }}</strong>
+					<br>
+					<strong>Note :</strong>
+					{{ review.rating }}⭐/ 5 ⭐<br>
+					<strong>Avis :</strong>
+					{{ review.reviewText }}
+				</li>
+			{% endfor %}
+		</ul>
+	{% endblock %}
+</html>

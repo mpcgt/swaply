@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
 		<script src="https://cdn.tailwindcss.com"></script>
 
@@ -12,45 +13,44 @@
 		{% endblock %}
 	</head>
 	<body>
-    {% block body %}
-<header class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-neutral-800/30 before:backdrop-blur-md">
-  <nav class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto">
-    <div class="flex items-center justify-between">
-      <div class="flex items-center">
-        <a class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="/" aria-label="Preline">
-          <img src="{{ asset('assets/img/icons-website/logo-white.png') }}" alt="Swaply" class="w-28 h-auto hover:opacity-50 transition-all" width="116" height="32">
-        </a>
-      </div>
-    </div>
+		{% block body %}
+    {% include '@WebProfiler/Profiler/toolbar.html.twig' %}
+			<header class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-neutral-800/30 before:backdrop-blur-md">
+				<nav class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto">
+					<div class="flex items-center justify-between">
+						<div class="flex items-center">
+							<a class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="/" aria-label="Preline">
+								<img src="{{ asset('assets/img/icons-website/logo-white.webp') }}" alt="Swaply" class="w-28 h-auto hover:opacity-50 transition-all" width="116" height="32">
+							</a>
+						</div>
+					</div>
 
-    <div id="hs-navbar-floating-dark" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block" aria-labelledby="hs-navbar-floating-dark-collapse">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
-        <a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300" href="/" aria-current="page">Accueil</a>
-        <a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300" href="/list">Listes</a>
-        <a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300" href="/all">Catégories</a>
-        <a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300" href="/about">À propos</a>
+					<div id="hs-navbar-floating-dark" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block" aria-labelledby="hs-navbar-floating-dark-collapse">
+						<div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300 transition-all" href="/" aria-current="page">Accueil</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300 transition-all" href="/list">Listes</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300 transition-all" href="/reviews">Avis</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300 transition-all" href="/all">Catégories</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300 transition-all" href="/about">À propos</a>
 
-        <div>
-          {% if app.user %}
-          <a href="{{ path('app_account') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-[#5159A6] font-medium text-sm text-white rounded-full focus:outline-none">
-            Mon compte
-          </a>
-          <a href="{{ path('app_logout') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-[#5159A6] font-medium text-sm text-white rounded-full focus:outline-none">
-            Se déconnecter
-          </a>
-          {% else %}
-          <a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-[#5159A6] font-medium text-sm text-white rounded-full focus:outline-none" href="/account">
-            Mon compte
-          </a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
-		{% if app.debug %}
-    {{ include('@WebProfiler/Profiler/toolbar.html.twig') }}
-{% endif %}
-	</body>
-    {% endblock %}
+							<div>
+								{% if app.user %}
+									<a href="{{ path('app_account') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full focus:outline-none transition-all">
+										Mon compte
+									</a>
+									<a href="{{ path('app_logout') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full focus:outline-none transition-all">
+										Se déconnecter
+									</a>
+								{% else %}
+									<a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full focus:outline-none transition-all" href="/account">
+										Mon compte
+									</a>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+		</body>
+	{% endblock %}
 </html>

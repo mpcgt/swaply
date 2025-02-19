@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface; // Correction ici
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use App\Repository\UsersRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -37,6 +37,12 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     private bool $is_admin;
+
+    public function __toString(): string
+{
+    return $this->getUsername();
+}
+
 
     public function getId(): ?int
     {
@@ -127,32 +133,23 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    // Implémentation de getRoles() (nécessaire pour UserInterface)
     public function getRoles(): array
     {
-        // Assurez-vous de renvoyer un tableau de rôles
-        // Exemple : ['ROLE_USER', 'ROLE_ADMIN'] 
         $roles = $this->is_admin ? ['ROLE_ADMIN'] : ['ROLE_USER'];
         return $roles;
     }
 
-    // Implémentation de getUserIdentifier() (nécessaire pour UserInterface)
     public function getUserIdentifier(): string
     {
-        // Ici, on retourne l'email ou le username comme identifiant unique
-        return $this->email;  // ou return $this->username;
+        return $this->email;
     }
 
-    // Implémentation de eraseCredentials() (nécessaire pour UserInterface)
     public function eraseCredentials(): void
     {
-        // Si vous avez des informations sensibles à effacer, vous pouvez le faire ici.
-        // Par exemple, un mot de passe temporaire.
     }
 
-    // Implémentation de PasswordAuthenticatedUserInterface
     public function getPassword(): string
     {
-        return $this->getPasswordHash(); // Retourne le mot de passe haché
+        return $this->getPasswordHash();
     }
 }

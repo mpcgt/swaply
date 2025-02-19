@@ -30,7 +30,6 @@ class Lists
     private ?Users $user = null;
 
     #[ORM\ManyToMany(targetEntity: Products::class)]
-    #[ORM\JoinTable(name: 'lists_products')]
     private Collection $products;
 
     #[ORM\Column(type: Types::INTEGER)]
@@ -38,7 +37,7 @@ class Lists
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
-
+ 
     public function __construct()
     {
         $this->products = new ArrayCollection();

@@ -1,4 +1,8 @@
-<head>
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>
 		{% block title %}S'inscrire - Swaply
 		{% endblock %}
@@ -22,17 +26,17 @@
 	<div class="mb-4">
 		{{ form_row(registrationForm.email, {
             'label': 'Adresse e-mail', 
-            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2F3466]'}
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
             }) }}
 		{{ form_row(registrationForm.plainPassword, {
             'label': 'Mot de passe',
-            'attr': {'class': 'w-full p-3 my-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2F3466]'}
+            'attr': {'class': 'w-full p-3 my-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
         }) }}
 		{{ form_row(registrationForm.agreeTerms, {
                 'label': 'J\'accepte les conditions d\'utilisation et les règles de confidentalité',
                 'attr': {'class': 'text-white'}
             }) }}
-		<button type="submit" class="w-full py-3 my-5 bg-[#2F3466] text-white font-semibold rounded-3xl hover:bg-[#2F3466] focus:outline-none focus:ring-2 focus:ring-[#2F3466]">
+		<button type="submit" class="w-full py-3 my-5 bg-indigo-500 text-white font-semibold rounded-3xl hover:bg-indigo-700 transition-all">
 			S'inscrire
 		</button>
 		{{ form_end(registrationForm) }}

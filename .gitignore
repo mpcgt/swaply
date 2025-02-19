@@ -23,3 +23,9 @@
 ###> symfony/asset-mapper ###
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+## Composer
+composer.phar
+
+## Server
+doctrine_migration_20250218115129.sql

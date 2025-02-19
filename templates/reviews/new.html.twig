@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}Nouveau avis - Swaply
+			{% endblock %}
+		</title>
+	</head>
+
+	{% block body %}
+		{% include 'base.html.twig' %}
+		<h1 class="text-center text-3xl font-bold mb-6 text-white">Écrire votre avis</h1>
+		<form class="w-full max-w-md mx-auto bg-zinc-900 p-8 rounded-3xl shadow-md mt-10">
+			{{ form_start(form) }}
+			{{ form_widget(form) }}
+			<div class="flex items-center">
+				<img src="{{ asset('assets/img/icons-website/arrow-left.png') }}" alt="Arrow Left" class="w-6 h-6">
+				<a class="text-center text-base font-bold mb-6 text-white ml-2" href="{{ path('reviews_index') }}">Retourner à la page d'avis</a>
+			</div>
+			{{ form_end(form) }}
+		</form>
+	{% endblock %}
+</html>

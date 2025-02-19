@@ -48,6 +48,11 @@ class Products
     #[ORM\JoinColumn(name: "id_badge", referencedColumnName: "id")]
     private ?Badge $badge = null;
 
+    public function __toString(): string
+    {
+        return $this->getTitle();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -82,12 +87,12 @@ class Products
         return $this->cover;
     }
 
-    public function setCover(string $cover): static
+    public function setCover(?string $cover): static
     {
         $this->cover = $cover;
-
         return $this;
     }
+    
 
     public function getTitle(): ?string
     {

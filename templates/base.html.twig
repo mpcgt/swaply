@@ -19,7 +19,7 @@
 				<nav class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto">
 					<div class="flex items-center justify-between">
 						<div class="flex items-center">
-							<a class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="/" aria-label="Preline">
+							<a class="flex-none rounded-md text-xl inline-block font-semibold" href="/" aria-label="Swaply">
 								<img src="{{ asset('assets/img/icons-website/logo-white.webp') }}" alt="Swaply" class="w-28 h-auto hover:opacity-50 transition-all" width="116" height="32">
 							</a>
 						</div>
@@ -27,22 +27,22 @@
 
 					<div id="hs-navbar-floating-dark" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block" aria-labelledby="hs-navbar-floating-dark-collapse">
 						<div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300 transition-all" href="/" aria-current="page">Accueil</a>
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300 transition-all" href="/list">Listes</a>
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300 transition-all" href="/reviews">Avis</a>
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300 transition-all" href="/all">Catégories</a>
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300 transition-all" href="/about">À propos</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/" aria-current="page">Accueil</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/lists">Listes</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/reviews">Avis</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/all">Catégories</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/about">À propos</a>
 
 							<div>
 								{% if app.user %}
-									<a href="{{ path('app_account') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full focus:outline-none transition-all">
+									<a href="{{ path('app_account') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full transition-all">
 										Mon compte
 									</a>
-									<a href="{{ path('app_logout') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full focus:outline-none transition-all">
+									<a href="{{ path('app_logout') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-red-600 font-medium text-sm text-white rounded-full transition-all">
 										Se déconnecter
 									</a>
 								{% else %}
-									<a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full focus:outline-none transition-all" href="/account">
+									<a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full transition-all" href="/account">
 										Mon compte
 									</a>
 								{% endif %}

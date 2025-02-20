@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ProductsRepository;
-use App\Entity\Badge;  // Assure-toi d'importer l'entité Badge
+use App\Entity\Badge;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductsRepository::class)]

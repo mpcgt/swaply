@@ -21,6 +21,7 @@ final class AccountController extends AbstractController
         $user = new Users();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
+        $token = $request->attributes->get('_profiler_token');
 
         if ($form->isSubmitted() && $form->isValid()) {
             $plainPassword = $form->get('plainPassword')->getData();
@@ -38,6 +39,7 @@ final class AccountController extends AbstractController
         return $this->render('account/index.html.twig', [
             'controller_name' => 'AccountController',
             'registrationForm' => $form->createView(),
+            'token' => $token
         ]);
     }
 }

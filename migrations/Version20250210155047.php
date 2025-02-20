@@ -22,11 +22,11 @@ final class Version20250210155047 extends AbstractMigration
         // $this->addSql('ALTER TABLE products DROP FOREIGN KEY FK_B3BA5A5A5697F554');
         $this->addSql('ALTER TABLE products CHANGE id_products id_products INT NOT NULL');
         $this->addSql('ALTER TABLE products CHANGE id_category id_category INT NOT NULL');
-        $this->addSql('ALTER TABLE products CHANGE cover cover TEXT NOT NULL');
-        $this->addSql('ALTER TABLE products ADD CONSTRAINT FK_B3BA5A5A5697F554 FOREIGN KEY (id_category) REFERENCES category (id)');
-        $this->addSql('ALTER TABLE products ADD CONSTRAINT FK_B3BA5A5A1075092D FOREIGN KEY (id_badge) REFERENCES badge (id)');
-        $this->addSql('CREATE INDEX IDX_B3BA5A5A5697F554 ON products (id_category)');
-        $this->addSql('CREATE INDEX IDX_B3BA5A5A1075092D ON products (id_badge)');
+        $this->addSql('ALTER TABLE lists CHANGE cover cover TEXT NOT NULL');
+        // $this->addSql('ALTER TABLE products ADD CONSTRAINT FK_B3BA5A5A5697F554 FOREIGN KEY (id_category) REFERENCES category (id)');
+        // $this->addSql('ALTER TABLE products ADD CONSTRAINT FK_B3BA5A5A1075092D FOREIGN KEY (id_badge) REFERENCES badge (id)');
+        // $this->addSql('CREATE INDEX IDX_B3BA5A5A5697F554 ON products (id_category)');
+        // $this->addSql('CREATE INDEX IDX_B3BA5A5A1075092D ON products (id_badge)');
         $this->addSql('ALTER TABLE users CHANGE id_users id_users INT NOT NULL, CHANGE first_name first_name VARCHAR(50) NOT NULL, CHANGE last_name last_name VARCHAR(255), CHANGE username username VARCHAR(50) NOT NULL');
     }
 

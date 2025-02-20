@@ -15,26 +15,25 @@ class Lists
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $cover = null;
-
+    
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
+    
+    #[ORM\Column(type: 'text')]
+    private ?string $cover = null;
 
-    #[ORM\ManyToOne(targetEntity: Users::class, inversedBy: 'lists')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Users $user = null;
-
+    #[ORM\Column(type: 'text')]
+    private ?string $website = null;
+    
     #[ORM\ManyToMany(targetEntity: Products::class)]
     private Collection $products;
-
+    
     #[ORM\Column(type: Types::INTEGER)]
     private int $likes = 0;
-
+    
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
  
@@ -82,14 +81,15 @@ class Lists
         return $this;
     }
 
-    public function getUser(): ?Users
+    public function getWebsite(): ?string
     {
-        return $this->user;
+        return $this->website;
     }
 
-    public function setUser(?Users $user): static
+    public function setWebsite(string $website): static
     {
-        $this->user = $user;
+        $this->website = $website;
+
         return $this;
     }
 

@@ -13,12 +13,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class ReviewsController extends AbstractController
 {
     #[Route('/reviews', name: 'reviews_index')]
-    public function index(EntityManagerInterface $entityManager): Response
+    public function index(EntityManagerInterface $entityManager, Request $request): Response
     {
+        $token = $request->attributes->get('_profiler_token');
         $reviews = $entityManager->getRepository(Reviews::class)->findAll();
     
         return $this->render('reviews/index.html.twig', [
             'reviews' => $reviews,
+            'token' => $token
         ]);
     }
 
@@ -26,6 +28,7 @@ class ReviewsController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $review = new Reviews();
+        $token = $request->attributes->get('_profiler_token');
         $form = $this->createForm(ReviewsType::class, $review);
 
         $form->handleRequest($request);
@@ -39,6 +42,7 @@ class ReviewsController extends AbstractController
 
         return $this->render('reviews/new.html.twig', [
             'form' => $form->createView(),
+            'token' => $token
         ]);
     }
 }

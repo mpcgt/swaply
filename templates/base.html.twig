@@ -37,9 +37,11 @@
 							<div>
 								{% if app.user %}
 									<a href="{{ path('app_account') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full transition-all">
-										Mon compte
+										 <img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-4">
+										 {{ app.user.username }}
 									</a>
 									<a href="{{ path('app_logout') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-red-600 font-medium text-sm text-white rounded-full transition-all">
+										<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Logo" class="w-4">
 										Se déconnecter
 									</a>
 								{% else %}

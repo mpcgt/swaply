@@ -17,7 +17,7 @@
 		{% include 'base.html.twig' %}
 		<div class="w-full max-w-screen-xl flex flex-col bg-zinc-900 shadow-sm rounded-full mx-auto p-4 md:p-5">
 			<p class="text-2xl text-white mx-auto font-medium">
-				<span class="text-indigo-500 font-extrabold">100</span>
+				<span class="text-indigo-500 font-extrabold">10</span>
 				sites/applications alternatives dans
 				<span class="inline-block mt-2">
 					<img src="{{ asset('assets/img/icons-website/logo-white.webp') }}" alt="Swaply" class="w-28 h-auto" width="116" height="32">
@@ -26,9 +26,7 @@
 			<img src="{{ asset('assets/img/illustrations/shield.webp') }}" alt="Shield" class="absolute top-[125px] mb-5" width="191" height="191">
 			<img src="{{ asset('assets/img/illustrations/rocket.webp') }}" alt="Rocket" class="absolute right-[400px] top-[225px] mb-5 transform -translate-y-1/2" width="150" height="156">
 			<div class="rounded-xl shadow-sm p-6">
-				<div class="relative">
-					<input class="py-3 ps-10 pe-4 block w-1/2 mx-auto border-zinc-900 rounded-full text-sm text-white bg-black focus:border-indigo-500 focus:ring-indigo-500 disabled:opacity-50 disabled:pointer-events-none" type="text" role="combobox" aria-expanded="false" placeholder="🔍 Rechercher les alternatives..." value="" data-hs-combo-box-input="" name="q">
-				</div>
+            {% include '/home/search_form.html.twig' %}
 				<div class="absolute w-full bg-black text-white hover:bg-zinc-900 hover:text-white rounded-xl hidden" id="dropdown-content">
 					<div class="max-h-[300px] p-2 rounded-b-xl overflow-y-auto overflow-hidden "></div>
 				</div>

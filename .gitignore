@@ -29,3 +29,4 @@ composer.phar
 
 ## Server
 doctrine_migration_20250218115129.sql
+templates/home/tests.php

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
 			{% block title %}Plateformes - Swaply
 			{% endblock %}
 		</title>
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-		<script src="https://cdn.tailwindcss.com"></script>
 
 		{% block javascripts %}
 			{% block importmap %}
@@ -19,7 +15,7 @@
 
 	{% block body %}
 		{% include 'base.html.twig' %}
-		<div class="grid grid-cols-2 w-5/6 mx-auto">
+		<div class="grid grid-cols-2 mx-auto">
 			<div class="grid grid-cols-1 w-1/2 mx-auto">
 				<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les catégories</h1>
 				<a href="/category/browser" class="bg-zinc-900 hover:bg-zinc-800 text-white p-4 rounded-t-xl border border-zinc-600 flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">

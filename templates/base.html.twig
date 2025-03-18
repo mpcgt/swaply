@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<meta name="description" content="Swaply vous aide à découvrir des alternatives innovantes aux applications dominantes, pour une expérience plus libre et personnalisée.">
+		<link rel="icon" href="{{ asset('assets/favicon.ico') }}">
 		<script src="https://cdn.tailwindcss.com"></script>
 
 		{% block javascripts %}
@@ -14,7 +15,7 @@
 	</head>
 	<body>
 		{% block body %}
-    {% include '@WebProfiler/Profiler/toolbar.html.twig' %}
+			{% include '@WebProfiler/Profiler/toolbar.html.twig' %}
 			<header class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-neutral-800/30 before:backdrop-blur-md">
 				<nav class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto">
 					<div class="flex items-center justify-between">

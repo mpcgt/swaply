@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="Swaply vous aide à découvrir des alternatives innovantes aux applications dominantes, pour une expérience plus libre et personnalisée.">
 		<title>
 			{% block title %}Swaply
 			{% endblock %}
 		</title>
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-		<link rel="stylesheet" href="./assets/styles/app.css">
-		<script src="https://cdn.tailwindcss.com"></script>
 
 		{% block javascripts %}
 			{% block importmap %}
@@ -32,13 +26,12 @@
 			<img src="{{ asset('assets/img/illustrations/shield.webp') }}" alt="Shield" class="absolute top-[125px] mb-5" width="191" height="191">
 			<img src="{{ asset('assets/img/illustrations/rocket.webp') }}" alt="Rocket" class="absolute right-[400px] top-[225px] mb-5 transform -translate-y-1/2" width="150" height="156">
 			<div class="rounded-xl shadow-sm p-6">
-						<div class="relative">
-							<input class="py-3 ps-10 pe-4 block w-1/2 mx-auto border-zinc-900 rounded-full text-sm text-white bg-black focus:border-indigo-500 focus:ring-indigo-500 disabled:opacity-50 disabled:pointer-events-none" type="text" role="combobox" aria-expanded="false" placeholder="🔍 Rechercher les alternatives..." value="" data-hs-combo-box-input="">
-						</div>
-
-						<div class="absolute w-full bg-black text-white hover:bg-zinc-900 hover:text-white rounded-xl hidden" id="dropdown-content">
-							<div class="max-h-[300px] p-2 rounded-b-xl overflow-y-auto overflow-hidden "></div>
-						</div>
+				<div class="relative">
+					<input class="py-3 ps-10 pe-4 block w-1/2 mx-auto border-zinc-900 rounded-full text-sm text-white bg-black focus:border-indigo-500 focus:ring-indigo-500 disabled:opacity-50 disabled:pointer-events-none" type="text" role="combobox" aria-expanded="false" placeholder="🔍 Rechercher les alternatives..." value="" data-hs-combo-box-input="" name="q">
+				</div>
+				<div class="absolute w-full bg-black text-white hover:bg-zinc-900 hover:text-white rounded-xl hidden" id="dropdown-content">
+					<div class="max-h-[300px] p-2 rounded-b-xl overflow-y-auto overflow-hidden "></div>
+				</div>
 				<p class="text-sm text-white font-medium text-center mt-5">
 					Swaply permet de trouver des alternatives aux applications dominantes et d’ajouter les vôtres en créant un compte.
 				</p>

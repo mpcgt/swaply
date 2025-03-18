@@ -14,9 +14,21 @@ final class HomeController extends AbstractController
     public function index(ProductsRepository $productsRepository, Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
-        $products = $productsRepository->findAll();
+        $products = $productsRepository->findBy(['id' => [1, 2, 3, 4, 5, 6, 7, 8, 9]]);
 
         return $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
+            'products' => $products,
+            'token' => $token
+        ]);
+    }
+    #[Route('/test', name: 'app_test')]
+    public function test(ProductsRepository $productsRepository, Request $request): Response
+    {
+        $token = $request->attributes->get('_profiler_token');
+        $products = $productsRepository->findBy(['id' => [1, 2, 3, 4, 5, 6, 7, 8, 9]]);
+
+        return $this->render('home/tests.php', [
             'controller_name' => 'HomeController',
             'products' => $products,
             'token' => $token

@@ -36,7 +36,7 @@ final class CategoryController extends AbstractController
     public function communication(ProductsRepository $productsRepository, Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
-        $products = $productsRepository->findBy(['category' => 10]);
+        $products = $productsRepository->findBy(['category' => 4]);
     
         return $this->render('category/communication.html.twig', [
             'controller_name' => 'CategoryController',
@@ -48,7 +48,7 @@ final class CategoryController extends AbstractController
     public function entertainment(ProductsRepository $productsRepository, Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
-        $products = $productsRepository->findBy(['category' => 6]);
+        $products = $productsRepository->findBy(['category' => 5]);
     
         return $this->render('category/entertainment.html.twig', [
             'controller_name' => 'CategoryController',
@@ -60,7 +60,7 @@ final class CategoryController extends AbstractController
     public function productivity(ProductsRepository $productsRepository, Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
-        $products = $productsRepository->findBy(['category' => 8]);
+        $products = $productsRepository->findBy(['category' => 6]);
     
         return $this->render('category/productivity.html.twig', [
             'controller_name' => 'CategoryController',
@@ -84,7 +84,7 @@ final class CategoryController extends AbstractController
     public function online_services(ProductsRepository $productsRepository, Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
-        $products = $productsRepository->findBy(['category' => [3, 4, 7, 11]]);
+        $products = $productsRepository->findBy(['category' => [3, 7, 8]]);
     
         return $this->render('category/online-services.html.twig', [
             'controller_name' => 'CategoryController',
@@ -96,7 +96,7 @@ final class CategoryController extends AbstractController
     public function dev(ProductsRepository $productsRepository, Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
-        $products = $productsRepository->findBy(['category' => [3, 12]]);
+        $products = $productsRepository->findBy(['category' => [8, 9, 12]]);
     
         return $this->render('category/dev.html.twig', [
             'controller_name' => 'CategoryController',
@@ -108,7 +108,7 @@ final class CategoryController extends AbstractController
     public function app(ProductsRepository $productsRepository, Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
-        $products = $productsRepository->findBy(['category' => 0]);
+        $products = $productsRepository->findBy(['category' => 10]);
     
         return $this->render('category/app.html.twig', [
             'controller_name' => 'CategoryController',
@@ -120,7 +120,7 @@ final class CategoryController extends AbstractController
     public function games(ProductsRepository $productsRepository, Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
-        $products = $productsRepository->findBy(['category' => 0]);
+        $products = $productsRepository->findBy(['category' => 11]);
     
         return $this->render('category/games.html.twig', [
             'controller_name' => 'CategoryController',

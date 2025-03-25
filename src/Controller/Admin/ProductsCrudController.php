@@ -15,7 +15,7 @@ class ProductsCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Products::class;
-    }
+    }   
 
     public function configureFields(string $pageName): iterable
     {

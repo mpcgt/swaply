@@ -5,6 +5,10 @@ body {
     color: #FFF
 }
 
+li, ul {
+  list-style-type: none;
+}
+
 /* Font Poppins with variables */
 .poppins-thin {
     font-family: "Poppins", serif;

@@ -16,17 +16,15 @@
 	{% block body %}
 		{% include 'base.html.twig' %}
 		<div class="w-full max-w-screen-xl flex flex-col shadow-sm rounded-full mx-auto p-4 md:p-5">
-			<form method="GET" action="{{ path('search_products') }}">
+			<form class="mx-auto max-w-2xl" method="GET" action="{{ path('search_products') }}">
 				<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Rechercher des alternatives</h1>
-<div class="flex text-center mx-auto">
-
-				<input class="py-3 ps-10 pe-4 block w-1/2 border-zinc-900 rounded-full text-sm text-white bg-black focus:border-indigo-500 focus:ring-indigo-500 disabled:opacity-50 disabled:pointer-events-none" type="text" role="combobox" aria-expanded="false" placeholder="🔎 Rechercher les alternatives..." value="{{ query }}" name="q">
-				<button type="submit" class="relative inline-flex p-0.5 mb-2 me-2 rounded-2xl group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500">
-					<span class="relative px-5 py-2.5 transition-all bg-black rounded-2xl group-hover:bg-transparent group-hover:dark:bg-transparent">
-						🔎 Rechercher
-					</span>
-				</button>
-                </div>
+				<div class="relative">
+					<div class="absolute inset-y-0 start-0 flex items-center ps-3">
+						<img src="{{ asset('assets/img/icons-website/search.png') }}" alt="Logo" class="w-6 h-6">
+					</div>
+					<input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-white border border-zinc-700 rounded-2xl bg-black" placeholder="Rechercher..." alue="{{ query }}" name="q" required/>
+					<button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-indigo-950 hover:bg-black transition-all hover:bg-blue-800 font-medium rounded-2xl text-sm px-4 py-2">Rechercher</button>
+				</div>
 			</form>
 
 			{% if products is not empty %}
@@ -35,35 +33,35 @@
 					{% for product in products %}
 						<li>
 							<section class="rounded-3xl w-3/4 mb-10 justify-center mx-auto">
-					<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-						<div class="mt-4 md:mt-0">
-							<img src="{{ asset('assets/uploads/icons/' ~ product.icon) }}" alt="{{ product.title }}" class="w-16">
-							<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">{{ product.title }}</h2>
-							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">{{ product.badge.code }}
-								•
-								{{ product.badge.price }}</span>
-							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">{{ product.category.title }}</span>
-							<p class="mb-6 text-white md:text-lg">{{ product.description }}</p>
-						</div>
-					</div>
-					<div class="flex justify-center space-x-4">
-						<button type="button" class="mb-9 text-white bg-amber-700 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
-							Alternatives
-						</button>
+								<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl">
+									<div class="mt-4 md:mt-0">
+										<img src="{{ asset('assets/uploads/icons/' ~ product.icon) }}" alt="{{ product.title }}" class="w-16">
+										<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">{{ product.title }}</h2>
+										<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">{{ product.badge.code }}
+											•
+											{{ product.badge.price }}</span>
+										<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">{{ product.category.title }}</span>
+										<p class="mb-6 text-white md:text-lg">{{ product.description }}</p>
+									</div>
+								</div>
+								<div class="flex justify-center space-x-4">
+									<button type="button" class="mb-9 text-white bg-amber-700 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
+										<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
+										Alternatives
+									</button>
 
-						<a href="{{ product.website }}" target="_blank" type="button" class="mb-9 text-white bg-purple-800 hover:bg-purple-900 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
+									<a href="{{ product.website }}" target="_blank" type="button" class="mb-9 text-white bg-purple-800 hover:bg-purple-900 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
 
-							<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
-							En savoir plus
-						</a>
+										<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
+										En savoir plus
+									</a>
 
-						<a href="{{ product.github }}" target="_blank" type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-4 focus:ring-zinc-700 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-zinc-700 flex items-center transition-all">
-							<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
-							GitHub
-						</a>
-					</div>
-				</section>
+									<a href="{{ product.github }}" target="_blank" type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-4 focus:ring-zinc-700 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-zinc-700 flex items-center transition-all">
+										<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
+										GitHub
+									</a>
+								</div>
+							</section>
 						</li>
 					{% endfor %}
 				</ul>
@@ -74,3 +72,4 @@
 		{% include 'footer.html.twig' %}
 	{% endblock %}
 </html></html>
+

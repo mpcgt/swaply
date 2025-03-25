@@ -15,7 +15,7 @@ class Products
     public ?int $id = null;
 
     #[ORM\Column]
-    private ?int $id_products = null;
+    private ?int $id_products;
 
     #[ORM\Column(length: 255)]
     private ?string $icon = null;

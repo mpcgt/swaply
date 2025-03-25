@@ -1,0 +1,39 @@
+{{ form_errors(productsform) }}
+
+{{ form_start(productsform, {'attr': {'class': 'w-full max-w-2xl mx-auto bg-zinc-900 p-8 mt-16 rounded-3xl shadow-md'}}) }}
+    {{ form_row(productsform.title, {
+            'label': 'Quelle est le nom ?', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+    {{ form_row(productsform.category, {
+            'label': 'Quelle est la catégorie ?', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+    {{ form_row(productsform.badge, {
+            'label': 'Est-t-elle open-source ?', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+    {{ form_row(productsform.icon, {
+            'label': 'Icône du site/application', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+    {{ form_row(productsform.cover, {
+            'label': 'Image de présentation du site/application', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+    {{ form_row(productsform.description, {
+            'label': 'Quelle est la description ?', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+    {{ form_row(productsform.website, {
+            'label': 'Lien du site web', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+    {{ form_row(productsform.github, {
+            'label': 'Lien du repo GitHub/GitLab', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+		<button type="submit" class="w-full py-3 my-5 bg-indigo-500 text-white font-semibold rounded-3xl hover:bg-indigo-700 transition-all">
+            Publier
+		</button>
+{{ form_end(productsform) }}

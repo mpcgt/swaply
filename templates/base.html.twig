@@ -31,7 +31,7 @@
 							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/" aria-current="page">Accueil</a>
 							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/lists">Listes</a>
 							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/reviews">Avis</a>
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/all">Catégories</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/category">Catégories</a>
 							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/about">À propos</a>
 
 							<div>
@@ -40,13 +40,14 @@
 										 <img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-4">
 										 {{ app.user.username }}
 									</a>
-									<a href="{{ path('app_logout') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-red-600 font-medium text-sm text-white rounded-full transition-all">
-										<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Logo" class="w-4">
-										Se déconnecter
+									<a href="{{ path('add_products') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full transition-all">
+										<img src="{{ asset('assets/img/icons-website/plus.png') }}" alt="Logo" class="w-4">
+										Ajouter un service
 									</a>
 								{% else %}
 									<a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full transition-all" href="/account">
-										Mon compte
+										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-4">
+										Se connecter
 									</a>
 								{% endif %}
 							</div>

@@ -45,10 +45,9 @@ final class ListController extends AbstractController
     public function id(int $id, ProductsRepository $productsRepository, EntityManagerInterface $entityManager, Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
-        $list = $this->entityManager->getRepository(Lists::class)->find($id);
-        $id = $entityManager->getRepository(Products::class)->find($id);
-        $lists = $this->listsRepository->findBy(['id' => $id]);
-        $products = $productsRepository->findBy(['id' => $id]);
+        $list = $this->listsRepository->find($id);
+        $lists = $this->listsRepository->findAll();
+        $products = $productsRepository->findAll();
         $listsProducts = $this->listsProductsRepository->findAll();
 
         if (!$list) {

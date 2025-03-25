@@ -36,13 +36,12 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password_hash = null;
 
     #[ORM\Column]
-    private bool $is_admin;
+    private bool $is_admin = false; // Initialize with a default value
 
     public function __toString(): string
-{
-    return $this->getUsername();
-}
-
+    {
+        return $this->getUsername();
+    }
 
     public function getId(): ?int
     {

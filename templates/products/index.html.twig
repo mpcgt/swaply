@@ -2,7 +2,7 @@
 <html lang="fr">
 	<head>
 		<title>
-			{% block title %}Swaply
+			{% block title %}Les alternatives/avis - Swaply
 			{% endblock %}
 		</title>
 
@@ -28,7 +28,7 @@
 							<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">{{ product.category.title }}</span>
 							<p class="mb-6 text-white md:text-lg">{{ product.description }}</p>
 						</div>
-						<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/saguenay.png') }}" alt="Saguenay Cover">
+						<img class="w-full rounded-3xl block" src="{{ asset('assets/uploads/covers/' ~ product.cover) }}" alt="Cover">
 					</div>
 					<div class="flex justify-center space-x-4">
 						<button type="button" class="mb-9 text-white bg-amber-700 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
@@ -47,8 +47,61 @@
 							GitHub
 						</a>
 					</div>
-				</section>
-			{% endfor %}
-		</div>
-	{% endblock %}
+					{% if reviews is defined and reviews is not empty %}
+						{% for review in reviews %}
+							<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
+
+							<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les avis</h1>
+							<li>
+								<ul class="bg-black border-2 border-zinc-900 rounded-3xl mt-10 mb-10 justify-center mx-auto p-10">
+									<strong>{{ review.user.username }}</strong>
+									a publié son avis sur
+									<img src="{{ asset('assets/uploads/icons/' ~ review.product.icon) }}" alt="Logo" class="w-16"/>
+									<strong>{{ review.product.title }}</strong>
+									<br>
+									<strong>Note :</strong>
+									{{ review.rating }}⭐/ 5 ⭐<br>
+									<strong>Avis :</strong>
+									{{ review.reviewText }}
+								</ul>
+							</li>
+						{% endfor %}
+					{% endif %}
+							<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
+
+							<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les alternatives à
+								{{ product.title }}</h1>
+					{% if alternatives is defined %}
+						{% for alternative in alternatives %}
+							<ul class="bg-zinc-950 rounded-3xl mt-10 mb-10 justify-center mx-auto p-3">
+								<section class="rounded-3xl w-3/3 mb-10 justify-center mx-auto">
+									<div class="gap-8 items-center mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2">
+										<div class="mt-4 md:mt-0">
+											<img src="{{ asset('assets/uploads/icons/' ~ product.icon) }}" alt="{{ alternative.title }}" class="w-16">
+											<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">{{ alternative.title }}</h2>
+											<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">{{ product.badge.code }}
+												•
+												{{ product.badge.price }}</span>
+											<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">{{ product.category.title }}</span>
+											<p class="mb-6 text-white md:text-lg">{{ alternative.description }}</p>
+										</div>
+										<img class="w-full rounded-3xl block" src="{{ asset('assets/uploads/covers/' ~ product.cover) }}" alt="Cover">
+									</div>
+									<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
+									<div class="flex justify-between px-48">
+										<h1 class="mr-10">✅ {{ alternative.advantage }}</h1>
+										<h1>❌ {{ alternative.incovenient }}</h1>
+									</div>
+								</ul>
+					{% endfor %}
+				{% endif %}
+							</div>
+						</ul>
+			</section>
+		{% endfor %}
+	</html>
+</div>
+{% include 'footer.html.twig' %}
+{% endblock %}
 </html>
+

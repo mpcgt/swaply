@@ -18,7 +18,7 @@ final class TagController extends AbstractController
             $token = $request->attributes->get('_profiler_token');
             $tags = $tagsRepository->findAll();
     
-            return $this->render('tags/index.html.twig', [
+            return $this->render('tag/index.html.twig', [
                 'tags' => $tags,
                 'token' => $token
             ]);
@@ -35,7 +35,7 @@ final class TagController extends AbstractController
                 throw $this->createNotFoundException('Page introuvable.');
             }
     
-            return $this->render('tags/index.html.twig', [
+            return $this->render('tag/index.html.twig', [
                 'tags' => $tags,
                 'token' => $token
             ]);

@@ -11,7 +11,8 @@
 		{% include 'base.html.twig' %}
 		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les avis</h1>
 		<div class="flex justify-center">
-			<a href="{{ path('reviews_new') }}" class="py-2 px-3 bg-indigo-500 hover:bg-indigo-900 font-medium text-sm text-white rounded-full focus:outline-none transition-all">
+			<a href="{{ path('reviews_new') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-900 font-medium text-sm text-white rounded-full focus:outline-none transition-all">
+				<img src="{{ asset('assets/img/icons-website/plus.png') }}" alt="Logo" class="w-4">
 				Écrire un avis
 			</a>
 		</div>
@@ -30,6 +31,7 @@
 					<strong>Avis :</strong>
 					{{ review.reviewText }}
 				</li>
+				<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
 			{% endfor %}
 		</ul>
 	{% endblock %}

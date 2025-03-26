@@ -1,0 +1,27 @@
+{{ form_errors(listsform) }}
+
+{{ form_start(listsform, {'attr': {'class': 'w-full max-w-2xl mx-auto bg-zinc-900 p-8 mt-16 rounded-3xl shadow-md'}, 'method': 'POST'}) }}
+    {{ form_row(listsform.title, {
+            'label': 'Quelle est le nom ?', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+    {{ form_row(listsform.description, {
+            'label': 'Quelle est la description ?', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+    {{ form_row(listsform.cover, {
+            'label': 'Image de présentation du site/application', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+    {{ form_row(listsform.products, {
+            'label': 'Quel site/application choisissez-vous ? (Pour sélectionner plusieurs éléments, maintenez la touche Ctrl enfoncée)',
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'},
+             }) }}
+    {{ form_row(listsform.date, {
+            'label': 'Quand souhaitez-vous publier votre liste ?', 
+            'attr': {'class': 'w-full p-3 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700'}
+            }) }}
+		<button type="submit" class="w-full py-3 my-5 bg-indigo-500 text-white font-semibold rounded-3xl hover:bg-indigo-700 transition-all">
+            Publier
+		</button>
+{{ form_end(listsform) }}

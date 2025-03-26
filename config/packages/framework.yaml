@@ -6,6 +6,7 @@ framework:
     session: true
 
     #esi: true
+    # default_robots: noindex
     #fragments: true
 
 when@test:

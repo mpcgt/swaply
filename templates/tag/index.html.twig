@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>
+			{% block title %}Nouveau avis - Swaply
+			{% endblock %}
+		</title>
+	</head>
+
+	{% block body %}
+		{% include 'base.html.twig' %}
+		{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+			<h1>Bienvenue, Administrateur !</h1>
+			<p>Ceci est une section réservée.</p>
+		{% else %}
+			<p class="text-3xl text-red-500 text-center font-semibold">Connectez-vous pour bénéficier d'un accès complet à toutes les fonctionnalités de Swaply.</p>
+			<div class="text-center mt-10">
+				<a href="{{ path('app_login') }}" class="py-4 px-6 bg-indigo-500 hover:bg-indigo-900 font-medium text-base text-white rounded-full focus:outline-none transition-all">Se connecter</a>
+			</div>
+		{% endif %}
+	{% endblock %}
+</html>
 

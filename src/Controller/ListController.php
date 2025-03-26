@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Lists;
 use App\Entity\Products;
+use App\Form\ListsFormType;
 use App\Repository\ListsRepository;
 use App\Repository\ProductsRepository;
 use App\Repository\ListsProductsRepository;
@@ -12,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 final class ListController extends AbstractController
 {
@@ -58,6 +60,31 @@ final class ListController extends AbstractController
             'listsProducts' => $listsProducts,
             'lists' => $lists,
             'products' => $products,
+            'token' => $token
+        ]);
+    }
+
+    #[Route('/list-add', name: 'add_lists')]
+    public function add(EntityManagerInterface $em, SluggerInterface $slugger, Request $request): Response
+    {
+        $token = $request->attributes->get('_profiler_token');
+        $lists = new Lists();
+        $listsform = $this->createForm(ListsFormType::class, $lists);
+        
+        $listsform->handleRequest($request);
+
+        if($listsform->isSubmitted() && $listsform->isValid()) {
+            $em->persist($lists);
+            $em->flush();
+
+            $this->addFlash('bg-green-500 text-white text-center py-4', 'La liste a été publié avec succès ! 😎');
+
+            return $this->redirectToRoute('app_lists');
+        }
+
+        return $this->render('list/add.html.twig', [
+            'lists' => $lists,
+            'listsform' => $listsform->createView(),
             'token' => $token
         ]);
     }

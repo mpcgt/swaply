@@ -15,28 +15,32 @@ class Lists
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-    
+
+    #[ORM\ManyToOne(targetEntity: Users::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Users $users = null;
+
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
-    
+
     #[ORM\Column(type: 'text')]
     private ?string $cover = null;
 
     #[ORM\Column(type: 'text')]
     private ?string $website = null;
-    
+
     #[ORM\ManyToMany(targetEntity: Products::class)]
     private Collection $products;
-    
+
     #[ORM\Column(type: Types::INTEGER)]
     private int $likes = 0;
-    
+
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
- 
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -46,6 +50,17 @@ class Lists
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getUser(): ?Users
+    {
+        return $this->users;
+    }
+
+    public function setUser(?Users $users): static
+    {
+        $this->users = $users;
+        return $this;
     }
 
     public function getCover(): ?string

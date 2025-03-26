@@ -41,7 +41,7 @@ class Reviews
         return $this->user;
     }
 
-    public function setUser(Users $user): static
+    public function setUser(?Users $user): static
     {
         $this->user = $user;
         return $this;

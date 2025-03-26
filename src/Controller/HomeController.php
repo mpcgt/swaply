@@ -17,13 +17,17 @@ final class HomeController extends AbstractController
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['id' => [1, 2, 3, 4, 5, 6, 7, 8, 9]]);
         $query = '';
-    
-        return $this->render('home/index.html.twig', [
+
+        $response = $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'products' => $products,
             'token' => $token,
             'query' => $query
         ]);
+
+        $response->headers->set('X-Robots-Tag', 'noindex');
+
+        return $response;
     }
-    
+
 }

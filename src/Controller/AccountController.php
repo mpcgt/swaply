@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Reviews;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,8 +20,10 @@ final class AccountController extends AbstractController
     public function index(Request $request, UserPasswordHasherInterface $userPasswordHasher, Security $security, EntityManagerInterface $entityManager): Response
     {
         $user = new Users();
+        $authentifited = $security->getUser();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
+        $reviews = $entityManager->getRepository(Reviews::class)->findBy(['user' => $authentifited]);
         $token = $request->attributes->get('_profiler_token');
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -39,6 +42,7 @@ final class AccountController extends AbstractController
         return $this->render('account/index.html.twig', [
             'controller_name' => 'AccountController',
             'registrationForm' => $form->createView(),
+            'reviews' => $reviews,
             'token' => $token
         ]);
     }

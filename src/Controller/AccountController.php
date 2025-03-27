@@ -25,6 +25,8 @@ final class AccountController extends AbstractController
         $form->handleRequest($request);
         $reviews = $entityManager->getRepository(Reviews::class)->findBy(['user' => $authentifited]);
         $token = $request->attributes->get('_profiler_token');
+        $templates = '';
+        $full_stack = '';
 
         if ($form->isSubmitted() && $form->isValid()) {
             $plainPassword = $form->get('plainPassword')->getData();
@@ -43,6 +45,8 @@ final class AccountController extends AbstractController
             'controller_name' => 'AccountController',
             'registrationForm' => $form->createView(),
             'reviews' => $reviews,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }

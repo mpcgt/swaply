@@ -16,11 +16,15 @@ final class HomeController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['id' => [1, 2, 3, 4, 5, 6, 7, 8, 9]]);
+        $templates = '';
+        $full_stack = '';
         $query = '';
 
         $response = $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token,
             'query' => $query
         ]);

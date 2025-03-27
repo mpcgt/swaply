@@ -21,9 +21,13 @@ class ProductController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findAll();
+        $templates = '';
+        $full_stack = '';
 
         return $this->render('products/index.html.twig', [
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -36,6 +40,8 @@ class ProductController extends AbstractController
         $alternatives = $entityManager->getRepository(Alternatives::class)->findBy(['product' => $id]);
         $reviews = $entityManager->getRepository(Reviews::class)->findBy(['product' => $id]);
         $products = $productsRepository->findBy(['id' => $id]);
+        $templates = '';
+        $full_stack = '';
 
         if (!$id) {
             throw $this->createNotFoundException('Page introuvable.');
@@ -45,6 +51,8 @@ class ProductController extends AbstractController
             'products' => $products,
             'reviews' => $reviews,
             'alternatives' => $alternatives,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -56,6 +64,8 @@ class ProductController extends AbstractController
         $products = new Products();
         $productsform = $this->createForm(ProductsFormType::class, $products);
         $productsform->handleRequest($request);
+        $templates = '';
+        $full_stack = '';
 
         if($productsform->isSubmitted() && $productsform->isValid()) {
             $em->persist($products);
@@ -69,6 +79,8 @@ class ProductController extends AbstractController
         return $this->render('products/add.html.twig', [
             'token' => $token,
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'productsform' => $productsform->createView()
         ]);
     }

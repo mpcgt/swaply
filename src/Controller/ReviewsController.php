@@ -17,9 +17,13 @@ class ReviewsController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $reviews = $entityManager->getRepository(Reviews::class)->findAll();
+        $templates = '';
+        $full_stack = '';
     
         return $this->render('reviews/index.html.twig', [
             'reviews' => $reviews,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -30,6 +34,8 @@ class ReviewsController extends AbstractController
         $review = new Reviews();
         $token = $request->attributes->get('_profiler_token');
         $form = $this->createForm(ReviewsType::class, $review);
+        $templates = '';
+        $full_stack = '';
 
         $form->handleRequest($request);
 
@@ -42,6 +48,8 @@ class ReviewsController extends AbstractController
 
         return $this->render('reviews/new.html.twig', [
             'form' => $form->createView(),
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }

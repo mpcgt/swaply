@@ -36,9 +36,13 @@ final class ListController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $lists = $this->listsRepository->findAll();
+        $templates = '';
+        $full_stack = '';
 
         return $this->render('list/index.html.twig', [
             'lists' => $lists,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -51,6 +55,8 @@ final class ListController extends AbstractController
         $lists = $this->listsRepository->findAll();
         $products = $productsRepository->findAll();
         $listsProducts = $this->listsProductsRepository->findAll();
+        $templates = '';
+        $full_stack = '';
 
         if (!$list) {
             throw $this->createNotFoundException('Page introuvable.');
@@ -60,6 +66,8 @@ final class ListController extends AbstractController
             'listsProducts' => $listsProducts,
             'lists' => $lists,
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -70,6 +78,8 @@ final class ListController extends AbstractController
         $token = $request->attributes->get('_profiler_token');
         $lists = new Lists();
         $listsform = $this->createForm(ListsFormType::class, $lists);
+        $templates = '';
+        $full_stack = '';
         
         $listsform->handleRequest($request);
 
@@ -85,6 +95,8 @@ final class ListController extends AbstractController
         return $this->render('list/add.html.twig', [
             'lists' => $lists,
             'listsform' => $listsform->createView(),
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }

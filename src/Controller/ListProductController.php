@@ -29,23 +29,23 @@ final class ListProductController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/lists/{id}', name: 'lists_id', methods: ['GET', 'POST'])]
+    #[Route('/lists/{id}', name: 'lists_id', methods: ['GET', 'POST'])] // Route pour afficher une liste par son ID
     public function id(int $id, ProductsRepository $productsRepository, EntityManagerInterface $entityManager, Request $request): Response
     {
-        $token = $request->attributes->get('_profiler_token');
-        $list = $this->entityManager->getRepository(Lists::class)->find($id);
-        $id = $entityManager->getRepository(Products::class)->find($id);
-        $lists = $this->listsRepository->findBy(['id' => $id]);
-        $products = $productsRepository->findBy(['id' => $id]);
-        $listsProducts = $this->listsProductsRepository->findAll();
-        $templates = '';
-        $full_stack = '';
+        $token = $request->attributes->get('_profiler_token'); // Récupère le token du profiler
+        $list = $this->entityManager->getRepository(Lists::class)->find($id); // Récupère la liste par son ID
+        $id = $entityManager->getRepository(Products::class)->find($id); // Récupère le produit par son ID
+        $lists = $this->listsRepository->findBy(['id' => $id]); // Récupère les listes associées au produit
+        $products = $productsRepository->findBy(['id' => $id]); // Récupère les produits associés au produit
+        $listsProducts = $this->listsProductsRepository->findAll(); // Récupère toutes les relations listes-produits
+        $templates = ''; // Initialisation variable templates
+        $full_stack = ''; // Initialisation variable full_stack
 
-        if (!$list) {
-            throw $this->createNotFoundException('Page introuvable.');
+        if (!$list) { // Si la liste n'est pas trouvée
+            throw $this->createNotFoundException('Page introuvable.'); // Lance une exception 404
         }
 
-        return $this->render('list/id.html.twig', [
+        return $this->render('list/id.html.twig', [ // Le template Twig
             'listsProducts' => $listsProducts,
             'lists' => $lists,
             'products' => $products,

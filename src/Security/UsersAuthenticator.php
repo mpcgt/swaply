@@ -20,41 +20,41 @@ class UsersAuthenticator extends AbstractLoginFormAuthenticator
 {
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_login';
+    public const LOGIN_ROUTE = 'app_login'; // Constante pour la route de connexion
 
     public function __construct(private UrlGeneratorInterface $urlGenerator)
     {
     }
 
-    public function authenticate(Request $request): Passport
+    public function authenticate(Request $request): Passport // Authentifie l'utilisateur
     {
-        $email = $request->getPayload()->getString('email');
+        $email = $request->getPayload()->getString('email'); // Récupère l'email depuis la requête
 
-        $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email);
+        $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email); // Stocke l'email dans la session
 
-        return new Passport(
-            new UserBadge($email),
-            new PasswordCredentials($request->getPayload()->getString('password')),
+        return new Passport( // Crée un objet Passport pour l'authentification
+            new UserBadge($email), // Crée un badge d'utilisateur avec l'email
+            new PasswordCredentials($request->getPayload()->getString('password')), // Crée un badge de mot de passe
             [
                 // new CsrfTokenBadge('authenticate', $request->getPayload()->getString('_csrf_token')),
-                new RememberMeBadge(),
+                new RememberMeBadge(), // Badge RememberMe
             ]
         );
     }
 
-    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response // Gère la réussite de l'authentification
     {
-        if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
-            return new RedirectResponse($targetPath);
+        if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) { // Si un chemin cible est stocké dans la session
+            return new RedirectResponse($targetPath); // Redirige vers le chemin cible
         }
 
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('app_account'));
+        return new RedirectResponse($this->urlGenerator->generate('app_account')); // Redirige vers la page de compte
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
-    protected function getLoginUrl(Request $request): string
+    protected function getLoginUrl(Request $request): string // Obtient l'URL de connexion
     {
-        return $this->urlGenerator->generate(self::LOGIN_ROUTE);
+        return $this->urlGenerator->generate(self::LOGIN_ROUTE); // Génère l'URL de la route de connexion
     }
 }

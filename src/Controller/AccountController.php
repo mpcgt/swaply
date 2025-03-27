@@ -19,29 +19,29 @@ final class AccountController extends AbstractController
     #[Route('/account', name: 'app_account')]
     public function index(Request $request, UserPasswordHasherInterface $userPasswordHasher, Security $security, EntityManagerInterface $entityManager): Response
     {
-        $user = new Users();
-        $authentifited = $security->getUser();
-        $form = $this->createForm(RegistrationFormType::class, $user);
-        $form->handleRequest($request);
-        $reviews = $entityManager->getRepository(Reviews::class)->findBy(['user' => $authentifited]);
-        $token = $request->attributes->get('_profiler_token');
-        $templates = '';
-        $full_stack = '';
+        $user = new Users(); // Crée une nouvelle instance de l'entité Users
+        $authentifited = $security->getUser(); // Récupère l'utilisateur authentifié
+        $form = $this->createForm(RegistrationFormType::class, $user); // Crée le formulaire d'inscription
+        $form->handleRequest($request); // Gère la requête du formulaire
+        $reviews = $entityManager->getRepository(Reviews::class)->findBy(['user' => $authentifited]); // Récupère les avis de l'utilisateur qui est connecté
+        $token = $request->attributes->get('_profiler_token'); // Récupère le token du profiler
+        $templates = ''; // Initialisation variable templates
+        $full_stack = ''; // Initialisation variable full_stack
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $plainPassword = $form->get('plainPassword')->getData();
+        if ($form->isSubmitted() && $form->isValid()) { // Si le formulaire est soumis et valide
+            $plainPassword = $form->get('plainPassword')->getData(); // Récupère le mot de passe en clair
 
-            $user->setPasswordHash($userPasswordHasher->hashPassword($user, $plainPassword));
+            $user->setPasswordHash($userPasswordHasher->hashPassword($user, $plainPassword)); // Hash le mot de passe
 
             $entityManager->persist($user);
-            $entityManager->flush();
+            $entityManager->flush(); // Enregistre les modifications
 
-            $security->login($user, UsersAuthenticator::class, 'main');
+            $security->login($user, UsersAuthenticator::class, 'main'); // Connecte l'utilisateur
 
-            return $this->redirectToRoute('app_account');
+            return $this->redirectToRoute('app_account'); // Redirige vers la page de compte
         }
 
-        return $this->render('account/index.html.twig', [
+        return $this->render('account/index.html.twig', [ // Le template Twig
             'controller_name' => 'AccountController',
             'registrationForm' => $form->createView(),
             'reviews' => $reviews,

@@ -31,15 +31,15 @@ final class ListController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/lists', name: 'app_lists')]
+    #[Route('/lists', name: 'app_lists')] // Route pour la liste de toutes les listes
     public function index(Request $request): Response
     {
-        $token = $request->attributes->get('_profiler_token');
-        $lists = $this->listsRepository->findAll();
-        $templates = '';
-        $full_stack = '';
+        $token = $request->attributes->get('_profiler_token'); // Récupère le token du profiler
+        $lists = $this->listsRepository->findAll(); // Récupère toutes les listes
+        $templates = ''; // Initialisation variable templates
+        $full_stack = ''; // Initialisation variable full_stack
 
-        return $this->render('list/index.html.twig', [
+        return $this->render('list/index.html.twig', [ // Le template Twig
             'lists' => $lists,
             'templates' => $templates, 
             'full_stack' => $full_stack, 
@@ -47,22 +47,22 @@ final class ListController extends AbstractController
         ]);
     }
 
-    #[Route('/lists/{id}', name: 'lists_id', methods: ['GET', 'POST'])]
+    #[Route('/lists/{id}', name: 'lists_id', methods: ['GET', 'POST'])] // Route pour afficher une liste par son ID
     public function id(int $id, ProductsRepository $productsRepository, EntityManagerInterface $entityManager, Request $request): Response
     {
-        $token = $request->attributes->get('_profiler_token');
-        $list = $this->listsRepository->find($id);
-        $lists = $this->listsRepository->findAll();
-        $products = $productsRepository->findAll();
-        $listsProducts = $this->listsProductsRepository->findAll();
-        $templates = '';
-        $full_stack = '';
+        $token = $request->attributes->get('_profiler_token'); // Récupère le token du profiler
+        $list = $this->listsRepository->find($id); // Récupère la liste par son ID
+        $lists = $this->listsRepository->findAll(); // Récupère toutes les listes
+        $products = $productsRepository->findAll(); // Récupère tous les produits
+        $listsProducts = $this->listsProductsRepository->findAll(); // Récupère toutes les relations listes-produits
+        $templates = ''; // Initialisation variable templates
+        $full_stack = ''; // Initialisation variable full_stack
 
-        if (!$list) {
-            throw $this->createNotFoundException('Page introuvable.');
+        if (!$list) { // Si la liste n'est pas trouvée
+            throw $this->createNotFoundException('Page introuvable.'); // Lance une exception 404
         }
 
-        return $this->render('list/id.html.twig', [
+        return $this->render('list/id.html.twig', [ // Le template Twig
             'listsProducts' => $listsProducts,
             'lists' => $lists,
             'products' => $products,
@@ -72,27 +72,27 @@ final class ListController extends AbstractController
         ]);
     }
 
-    #[Route('/list-add', name: 'add_lists')]
+    #[Route('/list-add', name: 'add_lists')] // Route pour ajouter une nouvelle liste
     public function add(EntityManagerInterface $em, SluggerInterface $slugger, Request $request): Response
     {
-        $token = $request->attributes->get('_profiler_token');
-        $lists = new Lists();
-        $listsform = $this->createForm(ListsFormType::class, $lists);
-        $templates = '';
-        $full_stack = '';
+        $token = $request->attributes->get('_profiler_token'); // Récupère le token du profiler
+        $lists = new Lists(); // Crée une nouvelle instance de l'entité Lists
+        $listsform = $this->createForm(ListsFormType::class, $lists); // Crée le formulaire pour ajouter une liste
+        $templates = ''; // Initialisation variable templates
+        $full_stack = ''; // Initialisation variable full_stack
         
-        $listsform->handleRequest($request);
+        $listsform->handleRequest($request); // Gère la requête du formulaire
 
-        if($listsform->isSubmitted() && $listsform->isValid()) {
-            $em->persist($lists);
-            $em->flush();
+        if($listsform->isSubmitted() && $listsform->isValid()) { // Si le formulaire est soumis et valide
+            $em->persist($lists); // Persiste la nouvelle liste
+            $em->flush(); // Enregistre les modifications
 
-            $this->addFlash('bg-green-500 text-white text-center py-4', 'La liste a été publié avec succès ! 😎');
+            $this->addFlash('bg-green-500 text-white text-center py-4', 'La liste a été publié avec succès ! 😎'); // Ajoute un message
 
-            return $this->redirectToRoute('app_lists');
+            return $this->redirectToRoute('app_lists'); // Redirige vers la liste des listes
         }
 
-        return $this->render('list/add.html.twig', [
+        return $this->render('list/add.html.twig', [ // Le template Twig
             'lists' => $lists,
             'listsform' => $listsform->createView(),
             'templates' => $templates, 

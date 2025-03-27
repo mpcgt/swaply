@@ -17,9 +17,13 @@ final class TagController extends AbstractController
         {
             $token = $request->attributes->get('_profiler_token');
             $tags = $tagsRepository->findAll();
+            $templates = '';
+            $full_stack = '';
     
             return $this->render('tag/index.html.twig', [
                 'tags' => $tags,
+                'templates' => $templates, 
+                'full_stack' => $full_stack, 
                 'token' => $token
             ]);
         }
@@ -30,6 +34,8 @@ final class TagController extends AbstractController
             $token = $request->attributes->get('_profiler_token');
             $id = $entityManager->getRepository(Tags::class)->find($id);
             $tags = $tagsRepository->findBy(['id' => $id]);
+            $templates = '';
+            $full_stack = '';
     
             if (!$id) {
                 throw $this->createNotFoundException('Page introuvable.');
@@ -37,6 +43,8 @@ final class TagController extends AbstractController
     
             return $this->render('tag/index.html.twig', [
                 'tags' => $tags,
+                'templates' => $templates, 
+                'full_stack' => $full_stack, 
                 'token' => $token
             ]);
         }

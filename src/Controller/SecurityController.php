@@ -18,10 +18,14 @@ class SecurityController extends AbstractController
         $token = $request->attributes->get('_profiler_token');
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
+        $templates = '';
+        $full_stack = '';
 
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }

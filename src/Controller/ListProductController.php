@@ -38,6 +38,8 @@ final class ListProductController extends AbstractController
         $lists = $this->listsRepository->findBy(['id' => $id]);
         $products = $productsRepository->findBy(['id' => $id]);
         $listsProducts = $this->listsProductsRepository->findAll();
+        $templates = '';
+        $full_stack = '';
 
         if (!$list) {
             throw $this->createNotFoundException('Page introuvable.');
@@ -47,6 +49,8 @@ final class ListProductController extends AbstractController
             'listsProducts' => $listsProducts,
             'lists' => $lists,
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }

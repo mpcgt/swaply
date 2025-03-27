@@ -14,8 +14,12 @@ final class CategoryController extends AbstractController
     public function index(Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
+        $templates = '';
+        $full_stack = '';
         return $this->render('category/index.html.twig', [
             'controller_name' => 'CategoryController',
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -25,10 +29,14 @@ final class CategoryController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['category' => 2]);
+        $templates = '';
+        $full_stack = '';
     
         return $this->render('category/browser.html.twig', [
             'controller_name' => 'CategoryController',
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -37,10 +45,14 @@ final class CategoryController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['category' => 4]);
+        $templates = '';
+        $full_stack = '';
     
         return $this->render('category/communication.html.twig', [
             'controller_name' => 'CategoryController',
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -49,10 +61,14 @@ final class CategoryController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['category' => 5]);
+        $templates = '';
+        $full_stack = '';
     
         return $this->render('category/entertainment.html.twig', [
             'controller_name' => 'CategoryController',
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -61,10 +77,14 @@ final class CategoryController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['category' => 6]);
+        $templates = '';
+        $full_stack = '';
     
         return $this->render('category/productivity.html.twig', [
             'controller_name' => 'CategoryController',
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -73,10 +93,14 @@ final class CategoryController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['category' => 1]);
+        $templates = '';
+        $full_stack = '';
     
         return $this->render('category/social-media.html.twig', [
             'controller_name' => 'CategoryController',
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -85,10 +109,14 @@ final class CategoryController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['category' => [3, 7, 8]]);
+        $templates = '';
+        $full_stack = '';
     
         return $this->render('category/online-services.html.twig', [
             'controller_name' => 'CategoryController',
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -97,10 +125,14 @@ final class CategoryController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['category' => [8, 9, 12]]);
+        $templates = '';
+        $full_stack = '';
     
         return $this->render('category/dev.html.twig', [
             'controller_name' => 'CategoryController',
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -109,10 +141,14 @@ final class CategoryController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['category' => 10]);
+        $templates = '';
+        $full_stack = '';
     
         return $this->render('category/app.html.twig', [
             'controller_name' => 'CategoryController',
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
@@ -121,10 +157,14 @@ final class CategoryController extends AbstractController
     {
         $token = $request->attributes->get('_profiler_token');
         $products = $productsRepository->findBy(['category' => 11]);
+        $templates = '';
+        $full_stack = '';
     
         return $this->render('category/games.html.twig', [
             'controller_name' => 'CategoryController',
             'products' => $products,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }

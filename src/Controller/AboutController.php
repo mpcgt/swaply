@@ -13,9 +13,13 @@ final class AboutController extends AbstractController
     public function index(Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token');
+        $templates = '';
+        $full_stack = '';
 
         return $this->render('about/index.html.twig', [
             'controller_name' => 'AboutController',
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }

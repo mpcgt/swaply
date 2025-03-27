@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 .env*
 /.env.local
@@ -26,6 +25,9 @@
 
 ## Composer
 composer.phar
+
+## node_modules (NPM)
+node_modules
 
 ## Server
 doctrine_migration_20250218115129.sql

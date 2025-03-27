@@ -19,9 +19,12 @@ class ProductsCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        // Configuration du champ 'icon' pour l'image de l'icône.
+        // Définit le répertoire où les images seront téléchargées.
         ImageField::new('icon')
         ->setUploadDir('/assets/img/icons');
 
+        // Retourne un tableau de configurations de champs.
         return [
             IdField::new('id'),
             IdField::new('id_products'),

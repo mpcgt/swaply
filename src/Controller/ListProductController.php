@@ -33,25 +33,27 @@ final class ListProductController extends AbstractController
     public function id(int $id, ProductsRepository $productsRepository, EntityManagerInterface $entityManager, Request $request): Response
     {
         $token = $request->attributes->get('_profiler_token'); // Récupère le token du profiler
-        $list = $this->entityManager->getRepository(Lists::class)->find($id); // Récupère la liste par son ID
-        $id = $entityManager->getRepository(Products::class)->find($id); // Récupère le produit par son ID
-        $lists = $this->listsRepository->findBy(['id' => $id]); // Récupère les listes associées au produit
-        $products = $productsRepository->findBy(['id' => $id]); // Récupère les produits associés au produit
-        $listsProducts = $this->listsProductsRepository->findAll(); // Récupère toutes les relations listes-produits
         $templates = ''; // Initialisation variable templates
         $full_stack = ''; // Initialisation variable full_stack
-
+         
+        // Récupère la liste par son ID
+        $list = $this->entityManager->getRepository(Lists::class)->find($id);
+        
         if (!$list) { // Si la liste n'est pas trouvée
             throw $this->createNotFoundException('Page introuvable.'); // Lance une exception 404
         }
-
+    
+        // Récupère tous les produits associés à cette liste via la méthode getProducts()
+        $products = $list->getProducts();
+        
         return $this->render('list/id.html.twig', [ // Le template Twig
-            'listsProducts' => $listsProducts,
-            'lists' => $lists,
+            'list' => $list,
             'products' => $products,
             'templates' => $templates, 
             'full_stack' => $full_stack, 
             'token' => $token
         ]);
     }
+    
+    
 }

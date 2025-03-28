@@ -18,6 +18,16 @@
 		<div class="products-list">
 			{% for product in products %}
 				<section class="rounded-3xl w-3/4 mb-10 justify-center mx-auto">
+					{% for message in app.flashes('message') %}
+						<div id="alert-border-3" class="flex items-center p-4 mb-4 mt-4 w-4/5 mx-auto text-green-400 border-t-4 border-green-800 bg-gray-800" role="alert">
+							<svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 20 20">
+								<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+							</svg>
+							<div class="ms-3 text-sm font-medium">
+								{{message}}
+							</div>
+						</div>
+					{% endfor %}
 					<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
 						<div class="mt-4 md:mt-0">
 							<img src="{{ asset('assets/uploads/icons/' ~ product.icon) }}" alt="{{ product.title }}" class="w-16">
@@ -67,10 +77,10 @@
 							</li>
 						{% endfor %}
 					{% endif %}
-							<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
+					<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
 
-							<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les alternatives à
-								{{ product.title }}</h1>
+					<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les alternatives à
+						{{ product.title }}</h1>
 					{% if alternatives is defined %}
 						{% for alternative in alternatives %}
 							<ul class="bg-zinc-950 rounded-3xl mt-10 mb-10 justify-center mx-auto p-3">
@@ -89,19 +99,19 @@
 									</div>
 									<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
 									<div class="flex justify-between px-48">
-										<h1 class="mr-10">✅ {{ alternative.advantage }}</h1>
-										<h1>❌ {{ alternative.incovenient }}</h1>
+										<h1 class="mr-10">✅
+											{{ alternative.advantage }}</h1>
+										<h1>❌
+											{{ alternative.incovenient }}</h1>
 									</div>
 								</ul>
-					{% endfor %}
-				{% endif %}
-							</div>
-						</ul>
+							{% endfor %}
+						{% endif %}
+					</div>
+				</ul>
 			</section>
 		{% endfor %}
 	</html>
 </div>
-{% include 'footer.html.twig' %}
-{% endblock %}
-</html>
+{% include 'footer.html.twig' %}{% endblock %}</html>
 

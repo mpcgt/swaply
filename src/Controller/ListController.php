@@ -87,7 +87,7 @@ final class ListController extends AbstractController
             $em->persist($lists); // Persiste la nouvelle liste
             $em->flush(); // Enregistre les modifications
 
-            $this->addFlash('bg-green-500 text-white text-center py-4', 'La liste a été publié avec succès ! 😎'); // Ajoute un message
+            $this->addFlash('message', 'La liste a été publié avec succès ! 😎'); // Ajoute un message
 
             return $this->redirectToRoute('app_lists'); // Redirige vers la liste des listes
         }

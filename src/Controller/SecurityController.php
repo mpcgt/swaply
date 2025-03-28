@@ -44,7 +44,7 @@ class SecurityController extends AbstractController
             $em->remove($user); // Supprime l'utilisateur de la base de données
             $em->flush(); // Enregistre les modifications
         }
-        $this->addFlash('deleted', 'Votre compte a été supprimé.'); // Ajoute un message de confirmation
+        $this->addFlash('message', 'Votre compte a été supprimé.'); // Ajoute un message de confirmation
         return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER); // Redirige vers la page d'accueil
     }
 }

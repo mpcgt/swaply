@@ -18,6 +18,17 @@
 				{% endif %}
 			</span>
 
+				{% for message in app.flashes('message') %}
+					<div id="alert-border-3" class="flex items-center p-4 mb-4 mt-4 w-4/5 mx-auto text-green-400 border-t-4 border-green-800 bg-gray-800" role="alert">
+						<svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 20 20">
+							<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+						</svg>
+						<div class="ms-3 text-sm font-medium">
+							{{message}}
+						</div>
+					</div>
+				{% endfor %}
+
 			<section class="flex justify-center mt-16">
 
 				<img src="{{ asset('assets/img/illustrations/profile-picture-default.jpg') }}" alt="Profile Picture default" class="w-1/4 h-128 rounded-3xl mr-16">
@@ -49,7 +60,7 @@
 						<a type="button" href="{{ path('app_logout') }}" class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mt-5 mb-2 transition-all">
 							Se déconnecter
 						</a>
-						<a type="button" href="#" class="text-black bg-yellow-400 hover:bg-yellow-500 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mt-5 mb-2 transition-all">
+						<a type="button" href="{{ path('app_edit') }}" class="text-black bg-yellow-400 hover:bg-yellow-500 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mt-5 mb-2 transition-all">
 							Modifier vos informations
 						</a>
 						<form action="{{ path('user_delete', {id: app.user.id}) }}" method="POST">
@@ -63,21 +74,21 @@
 			<hr class="h-px my-16 border-[#2F3466] border-2 w-3/4 mx-auto">
 			<h1 class="text-center text-3xl font-bold mb-6 text-white">Mes avis</h1>
 			<ul class="bg-black border-2 border-zinc-900 rounded-3xl w-3/4 mt-10 mb-10 justify-center mx-auto p-10">
-			{% for review in reviews %}
-				<li>
-					<strong>{{ review.user.username }}</strong>
-					a publié son avis sur
-					<img src="{{ asset('assets/uploads/icons/' ~ review.product.icon) }}" alt="Logo" class="w-16"/>
-					<strong>{{ review.product.title }}</strong>
-					<br>
-					<strong>Note :</strong>
-					{{ review.rating }}⭐/ 5 ⭐<br>
-					<strong>Avis :</strong>
-					{{ review.reviewText }}
-				</li>
-				<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
-			{% endfor %}
-		</ul>
+				{% for review in reviews %}
+					<li>
+						<strong>{{ review.user.username }}</strong>
+						a publié son avis sur
+						<img src="{{ asset('assets/uploads/icons/' ~ review.product.icon) }}" alt="Logo" class="w-16"/>
+						<strong>{{ review.product.title }}</strong>
+						<br>
+						<strong>Note :</strong>
+						{{ review.rating }}⭐/ 5 ⭐<br>
+						<strong>Avis :</strong>
+						{{ review.reviewText }}
+					</li>
+					<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
+				{% endfor %}
+			</ul>
 		{% else %}
 			{% include './registration/register.html.twig' %}
 		{% endif %}

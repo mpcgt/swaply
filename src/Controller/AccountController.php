@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\RegistrationFormType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Users;
+use App\Form\EditProfileFormType;
 use App\Security\UsersAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\SecurityBundle\Security;
@@ -16,6 +17,13 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 final class AccountController extends AbstractController
 {
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
     #[Route('/account', name: 'app_account')]
     public function index(Request $request, UserPasswordHasherInterface $userPasswordHasher, Security $security, EntityManagerInterface $entityManager): Response
     {
@@ -45,6 +53,34 @@ final class AccountController extends AbstractController
             'controller_name' => 'AccountController',
             'registrationForm' => $form->createView(),
             'reviews' => $reviews,
+            'templates' => $templates, 
+            'full_stack' => $full_stack, 
+            'token' => $token
+        ]);
+    }
+
+    #[Route('/edit', name: 'app_edit')]
+    public function edit(Request $request) {
+        $user = $this->getUser();
+        $form = $this->createForm(EditProfileFormType::class, $user);
+
+        $token = $request->attributes->get('_profiler_token'); // Récupère le token du profiler
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $em = $this->entityManager;
+            $em->persist($user);
+            $em->flush();
+
+            $this->addFlash('message', 'Votre compte a été modifié !');
+            return $this->redirectToRoute('app_account');
+        }
+
+        $templates = ''; // Initialisation variable templates
+        $full_stack = ''; // Initialisation variable full_stack
+
+        return $this->render('account/edit.html.twig', [ // Le template Twig
+            'form' => $form->createView(),
             'templates' => $templates, 
             'full_stack' => $full_stack, 
             'token' => $token

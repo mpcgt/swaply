@@ -43,6 +43,7 @@ class ReviewsController extends AbstractController
             $entityManager->persist($review); // Persiste le nouvel avis
             $entityManager->flush(); // Enregistre les modifications
 
+            $this->addFlash('message', 'Votre avis a bien été publié !');
             return $this->redirectToRoute('reviews_index'); // Redirige vers la liste des avis
         }
 

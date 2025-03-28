@@ -71,7 +71,7 @@ class ProductController extends AbstractController
             $em->persist($products); // Persiste le nouveau produit
             $em->flush(); // Enregistre les modifications
 
-            $this->addFlash('bg-green-500 text-white text-center py-4', 'Site/application publié avec succès ! 😎'); // Ajoute un message
+            $this->addFlash('message', 'Site/application publié avec succès ! 😎'); // Ajoute un message
 
             return $this->redirectToRoute('products_list'); // Redirige vers la liste des produits
         }

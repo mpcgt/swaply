@@ -13,37 +13,43 @@ class ListsProducts
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $lists_id = null;
+    // Définition de la relation ManyToOne avec l'entité Lists
+    #[ORM\ManyToOne(targetEntity: Lists::class, inversedBy: 'listsProducts')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Lists $list = null;
 
-    #[ORM\Column]
-    private ?int $products_id = null;
+    // Définition de la relation ManyToOne avec l'entité Products
+    #[ORM\ManyToOne(targetEntity: Products::class, inversedBy: 'listsProducts')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Products $product = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getListsId(): ?int
+    // Getter et Setter pour la liste
+    public function getList(): ?Lists
     {
-        return $this->lists_id;
+        return $this->list;
     }
 
-    public function setListsId(int $lists_id): static
+    public function setList(?Lists $list): static
     {
-        $this->lists_id = $lists_id;
+        $this->list = $list;
 
         return $this;
     }
 
-    public function getProductsId(): ?int
+    // Getter et Setter pour le produit
+    public function getProduct(): ?Products
     {
-        return $this->products_id;
+        return $this->product;
     }
 
-    public function setProductsId(int $products_id): static
+    public function setProduct(?Products $product): static
     {
-        $this->products_id = $products_id;
+        $this->product = $product;
 
         return $this;
     }

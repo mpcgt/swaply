@@ -30,9 +30,7 @@
 				{% endfor %}
 
 			<section class="flex justify-center mt-16">
-
-				<img src="{{ asset('assets/img/illustrations/profile-picture-default.jpg') }}" alt="Profile Picture default" class="w-1/4 h-128 rounded-3xl mr-16">
-				<div class="text-start">
+				<div class="text-center">
 					{% if app.user.getFirstName() %}
 						<h2 class="mb-4 text-gray-400">
 							Votre prénom & nom
@@ -52,7 +50,7 @@
 						<h2 class="mb-4 text-gray-400">
 							Certifié
 						</h2>
-						<img src="{{ asset('assets/img/icons-website/certified.png') }}" alt="Logo" class="w-9 mb-5">
+						<img src="{{ asset('assets/img/icons-website/certified.png') }}" alt="Logo" class="w-9 mb-5 mx-auto">
 					{% endif %}
 
 

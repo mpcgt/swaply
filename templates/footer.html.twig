@@ -36,15 +36,18 @@
 				<div>
 					<h2 class="mb-6 text-sm font-semibold text-white uppercase">Compte</h2>
 					<ul class="text-gray-200">
+						{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+						<li class="mb-4">
+							<a href="/account" class="hover:underline">Mon compte</a>
+						</li>
+						{% else %}
 						<li class="mb-4">
 							<a href="/login" class="hover:underline">Se connecter</a>
 						</li>
-						<li class="mb-4">
+						<li>
 							<a href="/register" class="hover:underline">S'inscrire</a>
 						</li>
-						<li>
-							<a href="/account" class="hover:underline">Mon compte</a>
-						</li>
+						{% endif %}
 					</ul>
 				</div>
 				<div>

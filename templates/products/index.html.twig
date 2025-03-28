@@ -57,11 +57,11 @@
 							GitHub
 						</a>
 					</div>
-					{% if reviews is defined and reviews is not empty %}
-						{% for review in reviews %}
 							<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
 
 							<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Tous les avis</h1>
+					{% if reviews is defined and reviews is not empty %}
+						{% for review in reviews %}
 							<li>
 								<ul class="bg-black border-2 border-zinc-900 rounded-3xl mt-10 mb-10 justify-center mx-auto p-10">
 									<strong>{{ review.user.username }}</strong>

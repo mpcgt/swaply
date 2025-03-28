@@ -60,8 +60,8 @@ class ProductController extends AbstractController
     #[Route('/add', name: 'add_products')] // Route pour ajouter un nouveau produit
     public function add(EntityManagerInterface $em, SluggerInterface $slugger, Request $request): Response
     {
-        $token = $request->attributes->get('_profiler_token'); // Récupère le token du profiler
         $products = new Products(); // Crée une nouvelle instance de l'entité Products
+        $token = $request->attributes->get('_profiler_token'); // Récupère le token du profiler
         $productsform = $this->createForm(ProductsFormType::class, $products); // Crée le formulaire pour ajouter un produit
         $productsform->handleRequest($request); // Gère la requête du formulaire
         $templates = ''; // Initialisation variable templates

@@ -16,16 +16,16 @@
 
 	{% block body %}
 		{% include 'base.html.twig' %}
-		<div class="w-full max-w-screen-xl flex flex-col bg-zinc-900 shadow-sm rounded-full mx-auto p-4 md:p-5">
-			<p class="text-2xl text-white mx-auto font-medium">
+		<div class="w-full max-w-screen-xl flex flex-col  md:bg-zinc-900 bg-transparent shadow-sm rounded-full mx-auto p-4 md:p-5">
+			<p class="text-2xl text-white text-center mx-auto font-medium">
 				<span class="text-indigo-500 font-extrabold">11</span>
 				sites/applications alternatives dans
 				<span class="inline-block mt-2">
 					<img src="{{ asset('assets/img/icons-website/logo-white.webp') }}" alt="Swaply" class="w-28 h-auto" width="116" height="32">
 				</span>
 			</p>
-			<img src="{{ asset('assets/img/illustrations/shield.webp') }}" alt="Shield" class="absolute top-[125px] mb-5" width="191" height="191">
-			<img src="{{ asset('assets/img/illustrations/rocket.webp') }}" alt="Rocket" class="absolute right-[400px] top-[225px] mb-5 transform -translate-y-1/2" width="150" height="156">
+			<img src="{{ asset('assets/img/illustrations/shield.webp') }}" alt="Shield" class="sm:block hidden absolute top-[125px] mb-5" width="191" height="191">
+			<img src="{{ asset('assets/img/illustrations/rocket.webp') }}" alt="Rocket" class="sm:block hidden absolute right-[400px] top-[225px] mb-5 transform -translate-y-1/2" width="150" height="156">
 			<div class="rounded-xl shadow-sm p-6">
             {% include '/home/search_form.html.twig' %}
 				<div class="absolute w-full bg-black text-white hover:bg-zinc-900 hover:text-white rounded-xl hidden" id="dropdown-content">
@@ -38,48 +38,48 @@
 		</div>
 
 		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Les catégories</h1>
-		<div class="grid grid-cols-3 gap-4 w-5/6 mx-auto">
+		<div class="grid md:grid-cols-3 md:gap-4 md:w-5/6 mx-auto">
 			<a href="/category/browser" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/earth.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Navigateurs & Extensions</span>
 			</a>
 
-			<a href="/category/communication" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/communication" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 mt-4 md:mt-0 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/message.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Communication</span>
 			</a>
 
-			<a href="/category/entertainment" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/entertainment" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 mt-4 md:mt-0 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/tv.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Divertissement</span>
 			</a>
 
-			<a href="/category/productivity" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/productivity" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 mt-4 md:mt-0 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/folders.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Productivité</span>
 			</a>
 
-			<a href="/category/social-media" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/social-media" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 mt-4 md:mt-0 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/thumbs-up.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Réseaux sociaux</span>
 			</a>
 
-			<a href="/category/online-services" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/online-services" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 mt-4 md:mt-0 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/radio.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Services en ligne</span>
 			</a>
 
-			<a href="/category/dev" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/dev" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 mt-4 md:mt-0 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/code.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Développement web</span>
 			</a>
 
-			<a href="/category/app" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/app" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 mt-4 md:mt-0 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/smartphone.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Applications mobiles</span>
 			</a>
 
-			<a href="/category/games" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
+			<a href="/category/games" class="bg-indigo-900 hover:bg-indigo-950 text-white p-4 mt-4 md:mt-0 rounded-full flex mx-auto font-bold items-center space-x-2 w-4/6 justify-center transition-all">
 				<img src="{{ asset('assets/img/images/games.png') }}" alt="Logo" class="w-6 h-6">
 				<span>Jeux</span>
 			</a>
@@ -95,7 +95,7 @@
 		</h1>
 
 		<div class="flex justify-center">
-			<div class="grid grid-cols-3 gap-4 w-5/6 mx-auto">
+			<div class="grid md:grid-cols-3 md:gap-4 md:w-5/6 mx-auto">
 
 				{% for product in products %}
 					<div class="flex justify-between">
@@ -146,21 +146,21 @@
 				</div>
 				<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/signal.webp') }}" alt="Signal Cover">
 			</div>
-			<div class="flex justify-center space-x-4">
-				<button type="button" class="mb-9 text-white bg-amber-700 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
+			<div class="grid md:grid-cols-3 md:gap-4 md:w-5/6 md:w-[550px] w-2/1 px-10 md:px-0 mx-auto">
+				<a type="button" class="mb-9 text-white bg-amber-700 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
 					<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
 					Alternatives
-				</button>
+				</a>
 
-				<button type="button" class="mb-9 text-white bg-purple-800 hover:bg-purple-900 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
+				<a type="button" href="http://127.0.0.1:8000/products/6" class="mb-9 text-white bg-purple-800 hover:bg-purple-900 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
 					<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
 					En savoir plus
-				</button>
+				</a>
 
-				<button type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-4 focus:ring-zinc-700 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-zinc-700 flex items-center transition-all">
+				<a type="button" href="https://github.com/signalapp" target="_blank" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-700 rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-zinc-700 flex items-center transition-all">
 					<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
 					GitHub
-				</button>
+				</a>
 
 			</div>
 		</section>
@@ -177,21 +177,21 @@
 				</div>
 				<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/saguenay.webp') }}" alt="Saguenay Cover">
 			</div>
-			<div class="flex justify-center space-x-4">
-				<button type="button" class="mb-9 text-white bg-amber-700 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
+			<div class="grid md:grid-cols-3 md:gap-4 md:w-5/6 md:w-[550px] w-2/1 px-10 md:px-0 mx-auto">
+				<a type="button" class="mb-9 text-white bg-amber-700 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
 					<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
 					Alternatives
-				</button>
+				</a>
 
-				<button type="button" class="mb-9 text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-900 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
+				<a type="button" href="http://127.0.0.1:8000/products/1" class="mb-9 text-white bg-purple-600 hover:bg-purple-700 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
 					<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
 					En savoir plus
-				</button>
+				</a>
 
-				<button type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-4 focus:ring-zinc-700 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-zinc-700 flex items-center transition-all">
+				<a type="button" href="https://github.com/mpcgt/saguenay" target="_blank" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-700 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-zinc-700 flex items-center transition-all">
 					<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
 					GitHub
-				</button>
+				</a>
 
 			</div>
 		</section>
@@ -208,21 +208,21 @@
 				</div>
 				<img class="w-full rounded-3xl hidden dark:block" src="{{ asset('assets/img/cover/brave.webp') }}" alt="Brave Cover">
 			</div>
-			<div class="flex justify-center space-x-4">
-				<button type="button" class="mb-9 text-white bg-amber-700 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
+			<div class="grid md:grid-cols-3 md:gap-4 md:w-5/6 md:w-[550px] w-2/1 px-10 md:px-0 mx-auto">
+				<a type="button" class="mb-9 text-white bg-amber-700 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center transition-all">
 					<img src="{{ asset('assets/img/icons-website/three-points.png') }}" alt="Three Points" class="w-8 h-8 mr-2">
 					Alternatives
-				</button>
+				</a>
 
-				<button type="button" class="mb-9 text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-900 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
+				<a type="button" href="http://127.0.0.1:8000/products/3" class="mb-9 text-white bg-purple-600 hover:bg-purple-700 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 flex items-center transition-all">
 					<img src="{{ asset('assets/img/icons-website/arrow-right.png') }}" alt="Arrow Points" class="w-8 h-8 mr-2">
 					En savoir plus
-				</button>
+				</a>
 
-				<button type="button" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none focus:ring-4 focus:ring-zinc-700 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-zinc-700 flex items-center transition-all">
+				<a type="button" href="https://github.com/brave" target="_blank" class="mb-9 text-white bg-zinc-800 hover:bg-zinc-700 focus:outline-none rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-zinc-700 flex items-center transition-all">
 					<img src="{{ asset('assets/img/icons-website/github.png') }}" alt="GitHub Logo" class="w-8 h-8 mr-2">
 					GitHub
-				</button>
+				</a>
 
 			</div>
 		</section>
@@ -270,7 +270,7 @@
 		<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
 
 		<h1 class="text-4xl text-white font-bold text-center mt-5 mb-5">Les applications les plus utilisées au monde</h1>
-		<div class="grid grid-cols-3 gap-4 w-5/6 mx-auto">
+		<div class="grid md:grid-cols-3 md:gap-4 md:w-5/6 mx-auto">
 			<button class="bg-zinc text-white p-4 rounded-2xl flex items-center mx-auto space-x-2 w-5/6 justify-center cursor-auto">
 				<div class="flex flex-col text-left">
 					<img src="{{ asset('assets/img/icons/google.png') }}" alt="Logo" class="w-12">

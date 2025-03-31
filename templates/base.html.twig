@@ -4,15 +4,15 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Swaply vous aide à découvrir des alternatives innovantes aux applications dominantes, pour une expérience plus libre et personnalisée.">
-    	<meta name="keywords" content="Saguenay, saguenay, social media, reseau social, sociaux, open-source, français, France, gratuit, Facebook, Twitter" />
-    	<meta name="robots" content="index, nofollow" />
-    	<meta property="og:title" content="Swaply" />
-    	<meta property="og:description" content="Swaply vous aide à découvrir des alternatives innovantes aux applications dominantes, pour une expérience plus libre et personnalisée." />
-    	<meta property="og:image" content="https://github.com/mpcgt/saguenay/blob/main/src/assets/images/logo/saguenay_purple.png?raw=true" />
-    	<meta property="og:url" content="https://votre-site.com" />
-    	<meta name="twitter:title" content="Swaply" />
-    	<meta name="twitter:description" content="Swaply vous aide à découvrir des alternatives innovantes aux applications dominantes, pour une expérience plus libre et personnalisée." />
-    	<meta name="twitter:image" content="https://github.com/mpcgt/saguenay/blob/main/src/assets/images/logo/saguenay_purple.png?raw=true" />
+		<meta name="keywords" content="Swaply, swaply, alternatives, open-source, français, France, gratuit"/>
+		<meta name="robots" content="index, nofollow"/>
+		<meta property="og:title" content="Swaply"/>
+		<meta property="og:description" content="Swaply vous aide à découvrir des alternatives innovantes aux applications dominantes, pour une expérience plus libre et personnalisée."/>
+		<meta property="og:image" content="https://github.com/mpcgt/saguenay/blob/main/src/assets/images/logo/saguenay_purple.png?raw=true"/>
+		<meta property="og:url" content="https://votre-site.com"/>
+		<meta name="twitter:title" content="Swaply"/>
+		<meta name="twitter:description" content="Swaply vous aide à découvrir des alternatives innovantes aux applications dominantes, pour une expérience plus libre et personnalisée."/>
+		<meta name="twitter:image" content="https://github.com/mpcgt/saguenay/blob/main/src/assets/images/logo/saguenay_purple.png?raw=true"/>
 		<link rel="icon" href="{{ asset('assets/favicon.ico') }}">
 		<script src="https://cdn.tailwindcss.com"></script>
 
@@ -21,29 +21,42 @@
 				{{ importmap('app') }}
 			{% endblock %}
 		{% endblock %}
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				document.querySelector('[data-collapse-toggle="navbar-default"]').addEventListener('click', function() {
+					let menu = document.getElementById('navbar-default');
+					if (menu.classList.contains('hidden')) {
+						menu.classList.remove('hidden');
+						this.setAttribute('aria-expanded', 'true');
+					} else {
+						menu.classList.add('hidden');
+						this.setAttribute('aria-expanded', 'false');
+					}
+				});
+			});
+		</script>
 	</head>
 	<body>
 		{% block body %}
 			{% include '@WebProfiler/Profiler/toolbar.html.twig' %}
-<div id="consent-banner" class="fixed bottom-0 left-0 w-full bg-zinc-900 text-white p-4 shadow-lg z-50 hidden">
-    <div class="flex items-center justify-between max-w-4xl mx-auto">
-        <p class="text-sm">
-            Ce site utilise des cookies pour améliorer votre expérience. En continuant à naviguer, vous acceptez notre politique de confidentialité.
-        </p>
-        <div class="flex space-x-2">
-            <button id="accept-consent" class="bg-indigo-500 text-white px-4 py-2 rounded-2xl text-sm">
-                Accepter
-            </button>
-            <button id="reject-consent" class="bg-red-500 text-white px-4 py-2 rounded-2xl text-sm">
-                Refuser
-            </button>
-        </div>
-    </div>
-</div>
+			<div id="consent-banner" class="fixed bottom-0 left-0 w-full bg-zinc-900 text-white p-4 shadow-lg z-50 hidden">
+				<div class="flex items-center justify-between max-w-4xl mx-auto">
+					<p class="text-sm">
+						Ce site utilise des cookies pour améliorer votre expérience. En continuant à naviguer, vous acceptez notre politique de confidentialité.
+					</p>
+					<div class="flex space-x-2">
+						<button id="accept-consent" class="bg-indigo-500 text-white px-4 py-2 rounded-2xl text-sm">
+							Accepter
+						</button>
+						<button id="reject-consent" class="bg-red-500 text-white px-4 py-2 rounded-2xl text-sm">
+							Refuser
+						</button>
+					</div>
+				</div>
+			</div>
 
-
-
-    <script src="{{ asset('js/consent.js') }}"></script>
+			<script src="{{ asset('js/consent.js') }}"></script>
 			<header class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-neutral-800/30 before:backdrop-blur-md">
 				<nav class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto">
 					<div class="flex items-center justify-between">
@@ -54,26 +67,40 @@
 						</div>
 					</div>
 
-					<div id="hs-navbar-floating-dark" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block" aria-labelledby="hs-navbar-floating-dark-collapse">
-						<div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/" aria-current="page">Accueil</a>
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/lists">Listes</a>
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/reviews">Avis</a>
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/category">Catégories</a>
-							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 transition-all" href="/about">À propos</a>
+					<div class="flex justify-between items-center">
+					<button
+							data-collapse-toggle="navbar-default"
+							type="button"
+							class="inline-flex items-center p-2 w-10 h-10 ml-auto text-sm text-white rounded-lg md:hidden"
+							aria-controls="navbar-default"
+							aria-expanded="false">
+						<span class="sr-only">Open main menu</span>
+						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+						</svg>
+					</button>
+					</div>
 
-							<div>
+					<div id="navbar-default" class="hidden transition-all duration-300 basis-full grow md:block" aria-labelledby="hs-navbar-floating-dark-collapse">
+						<div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 mx-auto md:mx-0 transition-all" href="/" aria-current="page">Accueil</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 mx-auto md:mx-0 transition-all" href="/lists">Listes</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 mx-auto md:mx-0 transition-all" href="/reviews">Avis</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 mx-auto md:mx-0 transition-all" href="/category">Catégories</a>
+							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 mx-auto md:mx-0 transition-all" href="/about">À propos</a>
+
+							<div class="mx-auto md:mx-0">
 								{% if app.user %}
-									<a href="{{ path('app_account') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full transition-all">
-										 <img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-4">
-										 {{ app.user.username }}
+									<a href="{{ path('app_account') }}" class="group inline-flex gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 md:mx-0 font-medium text-sm text-white rounded-full transition-all">
+										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-4">
+										{{ app.user.username }}
 									</a>
-									<a href="{{ path('add_products') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full transition-all">
+									<a href="{{ path('add_products') }}" class="group inline-flex gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 md:mx-0 font-medium text-sm text-white rounded-full transition-all">
 										<img src="{{ asset('assets/img/icons-website/plus.png') }}" alt="Logo" class="w-4">
 										Ajouter un service
 									</a>
 								{% else %}
-									<a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 font-medium text-sm text-white rounded-full transition-all" href="/account">
+									<a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 md:mx-0 font-medium text-sm text-white rounded-full transition-all" href="/account">
 										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-4">
 										Se connecter
 									</a>
@@ -86,3 +113,4 @@
 		</body>
 	{% endblock %}
 </html>
+

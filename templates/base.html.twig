@@ -21,6 +21,21 @@
 				{{ importmap('app') }}
 			{% endblock %}
 		{% endblock %}
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				document.querySelector('[data-collapse-toggle="navbar-default"]').addEventListener('click', function() {
+					let menu = document.getElementById('navbar-default');
+					if (menu.classList.contains('hidden')) {
+						menu.classList.remove('hidden');
+						this.setAttribute('aria-expanded', 'true');
+					} else {
+						menu.classList.add('hidden');
+						this.setAttribute('aria-expanded', 'false');
+					}
+				});
+			});
+		</script>
 	</head>
 	<body>
 		{% block body %}
@@ -52,7 +67,21 @@
 						</div>
 					</div>
 
-					<div id="hs-navbar-floating-dark" class="hs-collapse transition-all duration-300 basis-full grow md:block" aria-labelledby="hs-navbar-floating-dark-collapse">
+					<div class="flex justify-between items-center">
+					<button
+							data-collapse-toggle="navbar-default"
+							type="button"
+							class="inline-flex items-center p-2 w-10 h-10 ml-auto text-sm text-white rounded-lg md:hidden"
+							aria-controls="navbar-default"
+							aria-expanded="false">
+						<span class="sr-only">Open main menu</span>
+						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+						</svg>
+					</button>
+					</div>
+
+					<div id="navbar-default" class="hidden transition-all duration-300 basis-full grow md:block" aria-labelledby="hs-navbar-floating-dark-collapse">
 						<div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
 							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 mx-auto md:mx-0 transition-all" href="/" aria-current="page">Accueil</a>
 							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 mx-auto md:mx-0 transition-all" href="/lists">Listes</a>
@@ -60,18 +89,18 @@
 							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 mx-auto md:mx-0 transition-all" href="/category">Catégories</a>
 							<a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 mx-auto md:mx-0 transition-all" href="/about">À propos</a>
 
-							<div>
+							<div class="mx-auto md:mx-0">
 								{% if app.user %}
-									<a href="{{ path('app_account') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 mx-auto md:mx-0  font-medium text-sm text-white rounded-full transition-all">
+									<a href="{{ path('app_account') }}" class="group inline-flex gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 md:mx-0 font-medium text-sm text-white rounded-full transition-all">
 										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-4">
 										{{ app.user.username }}
 									</a>
-									<a href="{{ path('add_products') }}" class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 mx-auto md:mx-0  font-medium text-sm text-white rounded-full transition-all">
+									<a href="{{ path('add_products') }}" class="group inline-flex gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 md:mx-0 font-medium text-sm text-white rounded-full transition-all">
 										<img src="{{ asset('assets/img/icons-website/plus.png') }}" alt="Logo" class="w-4">
 										Ajouter un service
 									</a>
 								{% else %}
-									<a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 mx-auto md:mx-0  font-medium text-sm text-white rounded-full transition-all" href="/account">
+									<a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 md:mx-0 font-medium text-sm text-white rounded-full transition-all" href="/account">
 										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-4">
 										Se connecter
 									</a>

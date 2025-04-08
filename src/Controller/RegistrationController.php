@@ -19,7 +19,9 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, Security $security, EntityManagerInterface $entityManager): Response
     {
         $user = new Users(); // Crée une nouvelle instance de l'entité Users
-        $form = $this->createForm(RegistrationFormType::class, $user);// Crée le formulaire d'inscription
+        $form = $this->createForm(RegistrationFormType::class, $user, [
+            'csrf_protection' => true,
+        ]);// Crée le formulaire d'inscription
         $form->handleRequest($request); // Gère la requête du formulaire
         $token = $request->attributes->get('_profiler_token'); // Récupère le token du profiler
         $templates = ''; // Initialisation variable templates

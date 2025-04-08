@@ -43,7 +43,7 @@ class ProductController extends AbstractController
         $templates = ''; // Initialisation variable templates
         $full_stack = ''; // Initialisation variable full_stack
 
-        if (!$product) { // Si le produit n'est pas trouvé
+        if (!$product) { // Si le produit n'est pas trouvé  
             throw $this->createNotFoundException('Page introuvable.'); // Lance une exception 404
         }
 

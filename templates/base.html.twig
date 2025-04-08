@@ -92,16 +92,16 @@
 							<div class="mx-auto md:mx-0">
 								{% if app.user %}
 									<a href="{{ path('app_account') }}" class="group inline-flex gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 md:mx-0 font-medium text-sm text-white rounded-full transition-all">
-										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-4">
+										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-5">
 										{{ app.user.username }}
 									</a>
 									<a href="{{ path('add_products') }}" class="group inline-flex gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 md:mx-0 font-medium text-sm text-white rounded-full transition-all">
-										<img src="{{ asset('assets/img/icons-website/plus.png') }}" alt="Logo" class="w-4">
+										<img src="{{ asset('assets/img/icons-website/plus.png') }}" alt="Logo" class="w-5">
 										Ajouter un service
 									</a>
 								{% else %}
 									<a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-indigo-500 hover:bg-indigo-600 md:mx-0 font-medium text-sm text-white rounded-full transition-all" href="/account">
-										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-4">
+										<img src="{{ asset('assets/img/icons-website/account.png') }}" alt="Logo" class="w-5">
 										Se connecter
 									</a>
 								{% endif %}

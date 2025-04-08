@@ -11,12 +11,12 @@
 		{% include 'base.html.twig' %}
 		{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
 		<h1 class="text-center text-3xl font-bold mb-6 text-white">Écrire votre avis</h1>
-		<h1 class="text-center text-xl italic mb-3 text-white text-gray-500">Avant de publier votre avis, assurez-vous de bien respecter ces
+		<h1 class="text-center text-xl italic mb-3 text-white text-gray-300">Avant de publier votre avis, assurez-vous de bien respecter ces
 			<a href="https://github.com/mpcgt/swaply/blob/main/CODE_OF_CONDUCT.md" target="_blank" class="text-indigo-500 font-bold">règles</a>.</h1>
 		<div class="w-full max-w-2xl mx-auto bg-zinc-900 p-8 mt-16 rounded-3xl shadow-md">
 		{{ form_start(form) }}
 		<form>
-			<h1 class="text-center text-xl italic mb-3 text-white text-gray-500">Lorsque vous publierez votre avis, votre nom d'utilisateur ({{ app.user.username }}) sera visible.</h1>
+			<h1 class="text-center text-xl italic mb-3 text-white text-gray-300">Lorsque vous publierez votre avis, votre nom d'utilisateur ({{ app.user.username }}) sera visible.</h1>
 			{{ form_widget(form) }}
 			<div class="flex justify-center">
 				<a href="{{ path('reviews_index') }}" class="flex items-center w-full py-2 px-3 mx-auto bg-indigo-800 hover:bg-indigo-900 font-medium text-sm text-white rounded-full focus:outline-none transition-all">
@@ -34,6 +34,7 @@
 				<a href="{{ path('app_login') }}" class="py-4 px-6 bg-indigo-500 hover:bg-indigo-900 font-medium text-base text-white rounded-full focus:outline-none transition-all">Se connecter</a>
 			</div>
 		{% endif %}
+		{% include 'footer.html.twig' %}
 	{% endblock %}
 </html>
 

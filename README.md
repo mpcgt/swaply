@@ -28,10 +28,10 @@
 
 | **Critère**       | **Ordinateur** | **Téléphone** |
 |-------------------|----------------|---------------|
-| **Performance**   | 96%            | n/a%           |
-| **Accessibilité** | 96%           | n/a%           |
-| **Meilleures pratiques** | 96%       | n/a%           |
-| **SEO**           | 63%            | n/a%           |
+| **Performance**   | 94%            | 69%           |
+| **Accessibilité** | 93%           | 89%           |
+| **Meilleures pratiques** | 93%       | 89%           |
+| **SEO**           | 54%            | 54%           |
 
 
 ## ⌨️ **Clone**

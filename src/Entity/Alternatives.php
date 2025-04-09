@@ -12,7 +12,7 @@ class Alternatives
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    public ?int $id = null;
 
     #[ORM\ManyToOne(targetEntity: Products::class)]
     #[ORM\JoinColumn(name: "id_products", referencedColumnName: "id", nullable: false)]
@@ -27,6 +27,12 @@ class Alternatives
 
     #[ORM\Column(length: 255)]
     private ?string $description = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $icon = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $cover = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $advantage = null;
@@ -84,6 +90,28 @@ class Alternatives
     {
         $this->description = $description;
 
+        return $this;
+    }
+
+    public function getIcon(): ?string
+    {
+        return $this->icon;
+    }
+
+    public function setIcon(?string $icon): self
+    {
+        $this->icon = $icon;
+        return $this;
+    }
+
+    public function getCover(): ?string
+    {
+        return $this->cover;
+    }
+
+    public function setCover(?string $cover): self
+    {
+        $this->cover = $cover;
         return $this;
     }
 

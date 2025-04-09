@@ -87,7 +87,7 @@
 								<section class="rounded-3xl w-3/3 mb-10 justify-center mx-auto">
 									<div class="gap-8 items-center mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2">
 										<div class="mt-4 md:mt-0">
-											<img src="{{ asset('assets/uploads/icons/' ~ product.icon) }}" alt="{{ alternative.title }}" class="w-16">
+											<img src="{{ asset('assets/uploads/icons/' ~ alternative.icon) }}" alt="{{ alternative.title }}" class="w-16">
 											<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">{{ alternative.title }}</h2>
 											<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">{{ product.badge.code }}
 												•
@@ -95,7 +95,7 @@
 											<span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 mb-5 rounded-full text-xs font-medium bg-zinc-500 text-white">{{ product.category.title }}</span>
 											<p class="mb-6 text-white md:text-lg">{{ alternative.description }}</p>
 										</div>
-										<img class="w-full rounded-3xl block" src="{{ asset('assets/uploads/covers/' ~ product.cover) }}" alt="Cover">
+										<img class="w-full rounded-3xl block" src="{{ asset('assets/uploads/covers/' ~ alternative.cover) }}" alt="Cover">
 									</div>
 									<hr class="h-px my-16 border-indigo-950 border-2 w-3/4 mx-auto">
 									<div class="flex justify-between px-48">

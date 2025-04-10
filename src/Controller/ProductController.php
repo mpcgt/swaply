@@ -73,7 +73,7 @@ class ProductController extends AbstractController
 
             $this->addFlash('message', 'Site/application publié avec succès ! 😎'); // Ajoute un message
 
-            return $this->redirectToRoute('products_list'); // Redirige vers la liste des produits
+            return $this->redirectToRoute('app_home'); // Redirige vers la liste des produits
         }
         return $this->render('products/add.html.twig', [
             'token' => $token,

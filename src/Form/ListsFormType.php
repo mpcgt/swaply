@@ -7,6 +7,7 @@ use App\Entity\Products;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -25,7 +26,10 @@ class ListsFormType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('cover')
+            ->add('cover', FileType::class, [
+                'label' => 'Fichier de couverture (JPEG ou PNG)',
+                'mapped' => false,
+            ])
             ->add('date', null, [
                 'widget' => 'single_text',
             ])

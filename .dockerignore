@@ -1,0 +1,7 @@
+.env
+.env.dev
+.env.test
+*.log
+*.git
+.git/
+node_modules/

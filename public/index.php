@@ -5,8 +5,9 @@ use Symfony\Component\Dotenv\Dotenv;
 
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
-if (file_exists(dirname(__DIR__).'/.env')) {
-    (new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
+$envFile = dirname(__DIR__).'/.env';
+if (is_readable($envFile)) {
+    (new Dotenv())->bootEnv($envFile);
 }
 
 return function (array $context) {

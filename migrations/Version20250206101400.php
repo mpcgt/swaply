@@ -20,7 +20,7 @@ final class Version20250206101400 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE products ADD COLUMN IF NOT EXISTS icon VARCHAR(255) NOT NULL, ADD COLUMN IF NOT EXISTS cover LONGTEXT  NOT NULL, ADD COLUMN IF NOT EXISTS description LONGTEXT NOT NULL, ADD COLUMN IF NOT EXISTS website LONGTEXT NOT NULL, ADD COLUMN IF NOT EXISTS github LONGTEXT NOT NULL');        
+        $this->addSql('ALTER TABLE products ADD COLUMN icon VARCHAR(255) NOT NULL, ADD COLUMN cover LONGTEXT  NOT NULL, ADD COLUMN description LONGTEXT NOT NULL, ADD COLUMN website LONGTEXT NOT NULL, ADD COLUMN github LONGTEXT NOT NULL');        
         $this->addSql('ALTER TABLE users CHANGE id_users id_users INT NOT NULL, CHANGE first_name first_name VARCHAR(50) NOT NULL, CHANGE last_name last_name VARCHAR(255), CHANGE username username VARCHAR(50) NOT NULL, CHANGE is_admin is_admin TINYINT(1) NOT NULL');
     }
 

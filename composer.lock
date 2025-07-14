@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7816c7a9c5151d03585e37df95adac1d",
+    "content-hash": "65072847bb6a364475756dd311eaa35f",
     "packages": [
         {
             "name": "composer/semver",
@@ -4084,16 +4084,16 @@
         },
         {
             "name": "symfony/intl",
-            "version": "v7.2.8",
+            "version": "v7.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
-                "reference": "9d14eef4a9da8fc326eb752ae7f9d6310c834457"
+                "reference": "bd50940329ac1cfc4af0491cc4468f477d967e45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/intl/zipball/9d14eef4a9da8fc326eb752ae7f9d6310c834457",
-                "reference": "9d14eef4a9da8fc326eb752ae7f9d6310c834457",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/bd50940329ac1cfc4af0491cc4468f477d967e45",
+                "reference": "bd50940329ac1cfc4af0491cc4468f477d967e45",
                 "shasum": ""
             },
             "require": {
@@ -4150,7 +4150,7 @@
                 "localization"
             ],
             "support": {
-                "source": "https://github.com/symfony/intl/tree/v7.2.8"
+                "source": "https://github.com/symfony/intl/tree/v7.3.1"
             },
             "funding": [
                 {
@@ -4166,7 +4166,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-06T16:09:58+00:00"
+            "time": "2025-06-06T16:10:07+00:00"
         },
         {
             "name": "symfony/mailer",
@@ -10233,7 +10233,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -10241,6 +10241,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
